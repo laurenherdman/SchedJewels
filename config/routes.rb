@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-  get 'events/create'
-
-  get 'events/index'
-
-  get 'events/new'
 
   devise_for :users,
   :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+
+  resources :events
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

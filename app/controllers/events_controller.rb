@@ -1,11 +1,16 @@
 class EventsController < ApplicationController
-  	def create
+
+    def new
+      @event = Event.new
+    end
+
+    def create
      @event = Event.new(event_params)
 
      if @event.save
 
        render :nothing => true
-       google_event = { 'summary' => @event.title, 'description' => @event.description, 'location' => @event.location, 'start' => {'dateTime' => @event.start_time}, 'end' => {'dateTime' => @event.end_time}, 'attendees' = nil }
+       google_event = { 'summary' => @event.title, 'description' => @event.description, 'location' => @event.location, 'start' => {'dateTime' => @event.start_time}, 'end' => {'dateTime' => @event.end_time} }
 
        client = Google::APIClient.new
        client.authorization.access_token = current_user.token
