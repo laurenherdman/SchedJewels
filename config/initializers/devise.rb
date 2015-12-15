@@ -2,7 +2,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   require 'omniauth-google-oauth2'
-  config.omniauth :google_oauth2, '53893121832-2scbeii78nlf3e647i7nnd4mva8coi2d.apps.googleusercontent.com', 'DfEeUhbEPMQvoXpRxvzMeRme', { access_type: "offline", approval_prompt: "", scope: 'userinfo.email, userinfo.profile,calendar' }
+  config.omniauth :google_oauth2, '53893121832-2scbeii78nlf3e647i7nnd4mva8coi2d.apps.googleusercontent.com', 'DfEeUhbEPMQvoXpRxvzMeRme', { access_type: 'offline', approval_prompt: '', scope: 'userinfo.email, userinfo.profile,calendar' }
   config.mailer_sender = 'schedjewelsapp@gmail.com'
 
   # Configure the class responsible to send e-mails.
