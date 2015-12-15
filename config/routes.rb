@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'events/create'
+
+  get 'events/index'
+
+  get 'events/new'
+
   devise_for :users,
   :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
