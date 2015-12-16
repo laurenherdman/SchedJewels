@@ -2,7 +2,7 @@
 
 <%= @timeslots.each do |p| %>
 
-<%= link_to products_path %>
+<%= link_to _path %>
 <div class="timeslot">
 	<p class="vote_start"> <%= p.start_time ', ' p.start_date %> </p>
 	<p class="vote_end"> Ends: <%= p.end_time ', ' p.end_date %> </p>
