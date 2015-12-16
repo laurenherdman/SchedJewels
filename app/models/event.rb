@@ -1,11 +1,10 @@
-#require 'google/apis/calendar_v3'
-#require 'googleauth'
 require 'google/api_client'
 
 class Event < ActiveRecord::Base
+	belongs_to :user
+	has_many :proposals
 
 	after_commit on: :create
-
 
   def google_client(user)
   	# user = self.user
