@@ -30,6 +30,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'devise'
 gem 'pry-rails'
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
