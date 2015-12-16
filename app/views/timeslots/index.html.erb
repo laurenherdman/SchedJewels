@@ -1,2 +1,10 @@
-<h1>Timeslots#index</h1>
-<p>Find me in app/views/timeslots/index.html.erb</p>
+<h1>Pick a Time</h1>
+
+<%= @timeslots.each do |p| %>
+
+<%= link_to products_path %>
+<div class="timeslot">
+	<p class="vote_start"> <%= p.start_time ', ' p.start_date %> </p>
+	<p class="vote_end"> Ends: <%= p.end_time ', ' p.end_date %> </p>
+</div>
+<% end %>
