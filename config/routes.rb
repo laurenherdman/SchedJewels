@@ -1,5 +1,33 @@
 Rails.application.routes.draw do
 
+  get 'votes/index'
+
+  get 'votes/new'
+
+  get 'votes/create'
+
+  get 'votes/destroy'
+
+  get 'votes/show'
+
+  get 'timeslots/index'
+
+  get 'timeslots/new'
+
+  get 'timeslots/create'
+
+  get 'timeslots/destory'
+
+  get 'proposals/index'
+
+  get 'proposals/show'
+
+  get 'proposals/new'
+
+  get 'proposals/create'
+
+  get 'proposals/destroy'
+
   devise_for :users,
   :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
