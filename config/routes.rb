@@ -1,37 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'votes/index'
-
-  get 'votes/new'
-
-  get 'votes/create'
-
-  get 'votes/destroy'
-
-  get 'votes/show'
-
-  get 'timeslots/index'
-
-  get 'timeslots/new'
-
-  get 'timeslots/create'
-
-  get 'timeslots/destory'
-
-  get 'proposals/index'
-
-  get 'proposals/show'
-
-  get 'proposals/new'
-
-  get 'proposals/create'
-
-  get 'proposals/destroy'
-
   devise_for :users,
   :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :events
+  resources :proposals do
+    resources :timeslots do
+      resources :votes
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
