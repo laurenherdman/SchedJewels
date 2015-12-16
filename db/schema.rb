@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216205818) do
+ActiveRecord::Schema.define(version: 20151216210521) do
 
   create_table "events", force: :cascade do |t|
     t.string   "google_event_id"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20151216205818) do
     t.string   "title"
     t.text     "description"
     t.string   "location"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.date     "start_date"
+    t.time     "start_time"
+    t.date     "end_date"
+    t.time     "end_time"
   end
 
   create_table "proposals", force: :cascade do |t|
