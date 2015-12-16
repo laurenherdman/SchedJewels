@@ -1,2 +1,36 @@
-<h1>Proposals#new</h1>
-<p>Find me in app/views/proposals/new.html.erb</p>
+<%= form_for @proposal do |f| %>
+
+	<h1>Create An Event </h1>
+
+
+	<div class="event-fields">
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</div>
+
+	<div class="event-fields">
+		<%= f.label :description %><br>
+		<%= f.text_field :description %>
+	</div>
+
+	<div class="event-fields">
+		<%= f.label :location %><br>
+		<%= f.text_field :location %>
+	</div>
+
+	<h3>Add A Suggested Time</h3>
+		<%= f.fields_for :timeslots do |timeslot| %>
+			<%= render "timeslot_fields", :f => timeslot %>
+	<% end %>
+
+	<div>
+		<%= link_to_add_association 'Add Another Suggested Time', f, :timeslots %>
+	</div>
+
+	<br>
+
+	<div class="event-fields">
+		<%= f.submit :submit %>
+	</div>
+
+<% end %>

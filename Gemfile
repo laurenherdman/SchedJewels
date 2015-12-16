@@ -31,7 +31,7 @@ gem 'omniauth-google-oauth2'
 gem 'devise'
 gem 'pry-rails'
 gem 'figaro'
-
+gem 'cocoon'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

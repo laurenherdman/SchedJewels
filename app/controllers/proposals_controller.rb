@@ -28,6 +28,6 @@ class ProposalsController < ApplicationController
 
   private
     def proposal_params
-      params.require(:proposal).permit(:title, :description, :location)
+      params.require(:proposal).permit(:title, :description, :location, timeslot_attributes:[:start_date, :start_time, :end_date, :end_time])
     end
 end
