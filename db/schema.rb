@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216210521) do
+ActiveRecord::Schema.define(version: 20151216231542) do
 
   create_table "events", force: :cascade do |t|
     t.string   "google_event_id"
@@ -37,12 +37,13 @@ ActiveRecord::Schema.define(version: 20151216210521) do
   end
 
   create_table "timeslots", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.time     "start_time"
     t.date     "start_date"
     t.time     "end_time"
     t.date     "end_date"
+    t.integer  "proposal_id"
   end
 
   create_table "users", force: :cascade do |t|
