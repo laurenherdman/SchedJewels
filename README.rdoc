@@ -1,28 +1,20 @@
-== README
+==Sched Jewels
+The crystal clear orginization tool.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Version 4.2.5
 
-Things you may want to cover:
+==Getting Started
 
-* Ruby version
+$ bundle install
 
-* System dependencies
+$ bundle install exec figaro install
 
-* Configuration
+- Go to https://console.developers.google.com/ and make a project
+- Enable and manage APIs
+- On the left bar go to credentials
+- Make new credentials wiht OAuth client ID
+- In config/application.yml
+GOOGLE_KEY: "Client_ID"
+GOOGLE_SECRET: "Client_Secret"
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+There you go!
