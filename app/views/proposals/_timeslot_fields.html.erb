@@ -1,4 +1,5 @@
 <div class="nested-field">
+
 		<div class="event-fields">
 			<%= f.label :start_date %><br>
 			<%= f.date_field :start_date %>
@@ -17,6 +18,11 @@
 		<div class="event-fields">
 			<%= f.label :end_time %><br>
 			<%= f.time_field :end_time %>
+		</div>
+
+		<div class="event-fields">
+			<%= f.label :time_zone %>
+			<%= f.time_zone_select :time_zone %>
 		</div>
 
 </div>

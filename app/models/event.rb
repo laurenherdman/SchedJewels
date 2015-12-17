@@ -2,7 +2,7 @@ require 'google/api_client'
 
 class Event < ActiveRecord::Base
 	belongs_to :user
-	has_many :proposals
+	has_one :proposal
 
 	after_commit on: :create
 
@@ -15,7 +15,9 @@ class Event < ActiveRecord::Base
     google_api_client.authorization = Signet::OAuth2::Client.new({
       client_id: ENV["GOOGLE_KEY"],
       client_secret: ENV["GOOGLE_SECRET"],
-      access_token: user.token
+      access_token: user.token,
+      refresh_token: user.refresh_token
+
     })
     return google_api_client
   end
@@ -29,12 +31,31 @@ class Event < ActiveRecord::Base
 	    :headers => {'Content-Type' => 'application/json'})
 	end
 
+  def start_date_time
+    sd = proposal.start_date
+    st = proposal.start_time
+    sz = proposal.time_zone.to_s
+
+    sdt = DateTime.new(sd.year, sd.month, sd.day, st.hour, st.min)
+    sdt_string = sdt.to_s
+    return sdt_string.insert(-1, sz)
+  end
+
+  def end_date_time
+    ed = proposal.end_date
+    et = proposal.end_time
+    ez = proposal.time_zone
+
+    edt = DateTime.new(ed.year, ed.month, ed.day, et.hour, et.min)
+  end
+
   def add_to_calendar(user)
     client = google_client(user)
     service = client.discovered_api('calendar', 'v3')
     @result = client.execute(
-      :api_method => service.events.quick_add,
-      :parameters => {'calendarId' => 'primary', 'text' => self.title},
+      :api_method => service.events.insert,
+      :parameters => {'calendarId' => 'primary' },
+      :body_object => {'summary' => self.title, 'description' => self.description, 'location' => self.location,  'start' => { 'dateTime' => self.start_date_time }, 'end' => { 'dateTime' => self.end_date_time} },
       :headers => {'Content-Type' => 'application/json'})
   end
 

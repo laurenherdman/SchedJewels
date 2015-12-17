@@ -5,14 +5,20 @@ class EventsController < ApplicationController
     end
 
     def create
-     @event = Event.new(event_params)
+      @timeslot = Timeslot.find(params[:timeslot])
+      @timeslot.proposal.set_time
+      @event = Event.new
+      @timeslot.proposal.event = @event
+      @event.title = @timeslot.proposal.title
 
-     if @event.save
-      @event.to_google_event(current_user)
-     else
-       render :new
-     end
-   end
+
+      if @timeslot.proposal.save && @event.save
+          @event.add_to_calendar(current_user)
+          redirect_to proposal_path(@proposal)
+      else
+        redirect_to proposal_path(@proposal), notice: "Your event did not save."
+      end
+    end
 
     def index
       @events = Event.all

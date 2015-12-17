@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217013238) do
+ActiveRecord::Schema.define(version: 20151217221517) do
 
   create_table "events", force: :cascade do |t|
     t.string   "google_event_id"
@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(version: 20151217013238) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "owner_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "event_id"
+    t.string   "time_zone"
   end
 
   create_table "proposals_users", force: :cascade do |t|
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(version: 20151217013238) do
     t.time     "end_time"
     t.date     "end_date"
     t.integer  "proposal_id"
+    t.string   "time_zone"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,6 +74,7 @@ ActiveRecord::Schema.define(version: 20151217013238) do
     t.string   "uid"
     t.string   "provider"
     t.string   "name"
+    t.string   "refresh_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
     										 email: data["email"],
     										 provider: access_token.provider,
     										 uid: access_token.uid,
-    										 token: access_token.credentials.token)
+    										 token: access_token.credentials.token,
+                         refresh_token: access_token.credentials.refresh_token)
     end
     user
 	end
