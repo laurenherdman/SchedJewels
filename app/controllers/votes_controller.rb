@@ -10,6 +10,8 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new
     @vote.user = current_user
+    @timeslot = Timeslot.find_by(params[:timeslot_id])
+    @vote.timeslot = @timeslot
 
     if @vote.save
       redirect_to proposal_path(@vote.proposal), notice: "Thank you for voting."
