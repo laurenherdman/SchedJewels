@@ -64,7 +64,32 @@ table {
 }
 
 .navbar {
+	border-radius: 0;
 }
 
 .navbar-default {
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+.textcenter {
+	text-align: center;
+}
+
+.blockcenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Devise Styles //
+
+h2#log-in-title {
+	font-size: 4em;
+}
+
+.field {
+	margin-top: 5vh;
+	font-size: 2em;
 }
