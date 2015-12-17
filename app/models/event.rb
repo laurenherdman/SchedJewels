@@ -29,4 +29,13 @@ class Event < ActiveRecord::Base
 	    :headers => {'Content-Type' => 'application/json'})
 	end
 
+  def add_to_calendar(user)
+    client = google_client(user)
+    service = client.discovered_api('calendar', 'v3')
+    @result = client.execute(
+      :api_method => service.events.quick_add,
+      :parameters => {'calendarId' => 'primary', 'text' => self.title},
+      :headers => {'Content-Type' => 'application/json'})
+  end
+
 end
