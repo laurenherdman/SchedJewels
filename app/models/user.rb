@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  has_many :proposals
+  has_many :owned_proposals, :class_name => 'Proposal', :foreign_key => :owner_id
   has_many :events
   has_many :votes
+  has_and_belongs_to_many :proposals
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
