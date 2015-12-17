@@ -6,4 +6,8 @@ class Proposal < ActiveRecord::Base
 	has_and_belongs_to_many :users
 
 	accepts_nested_attributes_for :timeslots, reject_if: :all_blank, allow_destroy: true
+
+	def winning_timeslot
+		timeslots.max_by { |t| t.votes.count }
+	end
 end
