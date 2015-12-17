@@ -16,7 +16,7 @@ class ProposalsController < ApplicationController
     @proposal.owner_id = current_user.id
 
     if @proposal.save
-      redirect_to proposals_url
+      redirect_to proposal_path(@proposal)
     else
       render :new
     end
@@ -28,6 +28,6 @@ class ProposalsController < ApplicationController
 
   private
     def proposal_params
-      params.require(:proposal).permit(:title, :description, :location, timeslot_attributes:[:start_date, :start_time, :end_date, :end_time, :id])
+      params.require(:proposal).permit(:title, :description, :location, timeslots_attributes:[:start_date, :start_time, :end_date, :end_time, :id])
     end
 end

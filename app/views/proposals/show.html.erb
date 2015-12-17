@@ -1,1 +1,17 @@
-<h1>Create an Event</h1>
+<div>
+	<ul>
+		<li><p class="bold">Title:</p>
+			<%= @proposal.description %></li>
+		<li><p class="bold">Description:</p>
+			<%= @proposal.description %></li>
+		<li><p class="bold">Location:</p>
+			<%= @proposal.location %></li>
+
+	<% @proposal.timeslots.each do |t| %>
+		<li><p class="bold">Date:</p>
+			<%= t.start_date.strftime("%b. %d, %Y") %></li>
+		<li><p class="bold">From:</p>
+			<%= t.start_time.strftime("%I:%M %p") %> to <%= t.end_time.strftime("%I:%M %p")  %></li>
+	</ul>
+	<% end %>
+</div>
