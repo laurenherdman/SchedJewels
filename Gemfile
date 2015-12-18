@@ -32,6 +32,8 @@ gem 'devise'
 gem 'pry-rails'
 gem 'figaro'
 gem 'cocoon'
+gem 'rest-client', '~> 1.8'
+gem 'signet'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

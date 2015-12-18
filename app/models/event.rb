@@ -13,11 +13,12 @@ class Event < ActiveRecord::Base
       application_name: 'schedjewels2'
     })
     google_api_client.authorization = Signet::OAuth2::Client.new({
-      client_id: ENV["GOOGLE_KEY"],
-      client_secret: ENV["GOOGLE_SECRET"],
-      access_token: user.token,
-      refresh_token: user.refresh_token
-
+      :authorization_uri => 'https://accounts.google.com/o/oauth2.auth',
+      :token_credential_uri => 'https://www.googleapis.com/oauth2/token',
+      :client_id => ENV["GOOGLE_KEY"],
+      :client_secret => ENV["GOOGLE_SECRET"],
+      :scope => 'email profile calendar',
+      :access_token => user.token
     })
     return google_api_client
   end

@@ -16,6 +16,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
  	<%= csrf_meta_tags %>
+
 </head>
 <body>
 
@@ -31,6 +32,7 @@
       </button>
       <a class="navbar-brand" href="#">Brand</a>
     </div>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
