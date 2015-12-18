@@ -5,6 +5,7 @@ class ProposalsController < ApplicationController
 
   def show
     @proposal = Proposal.find(params[:id])
+    @comment = Comment.new(user: current_user, proposal: @proposal)
   end
 
   def new
