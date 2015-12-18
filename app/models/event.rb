@@ -34,7 +34,7 @@ class Event < ActiveRecord::Base
   def start_date_time
     sd = proposal.start_date
     st = proposal.start_time
-    sz = proposal.time_zone.to_s
+    sz = proposal.time_zone.localtime
 
     sdt = DateTime.new(sd.year, sd.month, sd.day, st.hour, st.min)
     sdt_string = sdt.to_s
