@@ -36,7 +36,7 @@ class Event < ActiveRecord::Base
   def start_date_time
     sd = proposal.start_date
     st = proposal.start_time.in_time_zone('Islamabad')
-    sz = proposal.time_zone
+
 
     sdt = DateTime.new(sd.year, sd.month, sd.day, st.hour, st.min)
 
@@ -45,7 +45,7 @@ class Event < ActiveRecord::Base
   def end_date_time
     ed = proposal.end_date
     et = proposal.end_time.in_time_zone('Islamabad')
-    ez = proposal.time_zone
+
 
     edt = DateTime.new(ed.year, ed.month, ed.day, et.hour, et.min)
   end

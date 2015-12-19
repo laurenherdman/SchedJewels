@@ -12,8 +12,7 @@
 			<%= t.start_date.strftime("%b. %d, %Y") %></li>
 		<li><p class="bold">From:</p>
 			<%= t.start_time.strftime("%I:%M %p") %> to <%= t.end_time.strftime("%I:%M %p")  %></li>
-		<li><p>Timezone:</p>
-		<%= t.time_zone %> </li>
+
 
 
 		<%= form_for [@proposal, t, Vote.new] do |f| %>
