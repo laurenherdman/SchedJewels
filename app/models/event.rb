@@ -16,7 +16,9 @@ class Event < ActiveRecord::Base
       client_id: ENV["GOOGLE_KEY"],
       client_secret: ENV["GOOGLE_SECRET"],
       access_token: user.token,
-      refresh_token: user.refresh_token
+      refresh_token: user.refresh_token,
+      :authorization_uri => 'https://accounts.google.com/o/oauth2/auth',
+      :token_credential_uri =>  'https://www.googleapis.com/oauth2/v3/token'
 
     })
     return google_api_client
