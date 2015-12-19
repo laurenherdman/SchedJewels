@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :events
   resources :proposals do
     resources :comments, only: [:show, :create, :destroy]
+    resources :attendees, only: [:new, :create, :destroy]
     resources :timeslots do
       resources :votes
     end

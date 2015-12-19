@@ -27,7 +27,16 @@
 		<%= link_to_add_association 'Add Another Suggested Time', f, :timeslots %>
 	</div>
 
-	<br>
+	<div>
+		<%= f.fields_for :attendees do |attendee| %>
+			<%= render "attendee_fields", :f => attendee %>
+		<% end %>
+	</div>
+
+	<div>
+		<%= link_to_add_association 'Add Another Attendee', f, :attendees %>
+	</div>
+
 
 	<div class="event-fields">
 		<%= f.submit :submit %>

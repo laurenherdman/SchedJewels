@@ -2,6 +2,7 @@ class Proposal < ActiveRecord::Base
 
 	belongs_to :owner, :class_name => "User"
 	has_many :timeslots
+	has_many :attendees
 	has_many :votes, through: :timeslots
 	has_and_belongs_to_many :users
 	belongs_to :event
@@ -10,6 +11,7 @@ class Proposal < ActiveRecord::Base
 	has_many :commenting_users, through: :comments, :source => :user
 
 	accepts_nested_attributes_for :timeslots, reject_if: :all_blank, allow_destroy: true
+	accepts_nested_attributes_for :attendees, reject_if: :all_blank, allow_destroy: true
 
 	def winning_timeslot
 		timeslots.max_by { |t| t.votes.count }
@@ -27,6 +29,16 @@ class Proposal < ActiveRecord::Base
 
 		self.save
 	end
+
+	@attendee_array = []
+
+	def attendee_to_array
+		self.attendees.each do |a| 
+			@attendee_array << a
+			return @attendee_array
+		end
+	end
+	
 
 
 end
