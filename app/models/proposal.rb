@@ -30,13 +30,12 @@ class Proposal < ActiveRecord::Base
 		self.save
 	end
 
-	@attendee_array = []
-
 	def attendee_to_array
+		attendee_array = []
 		self.attendees.each do |a| 
-			@attendee_array << a
-			return @attendee_array
+			attendee_array << a.email_address
 		end
+		 	return attendee_array
 	end
 	
 
