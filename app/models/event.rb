@@ -16,7 +16,9 @@ class Event < ActiveRecord::Base
       client_id: ENV["GOOGLE_KEY"],
       client_secret: ENV["GOOGLE_SECRET"],
       access_token: user.token,
-      refresh_token: user.refresh_token
+      refresh_token: user.refresh_token,
+      :authorization_uri => 'https://accounts.google.com/o/oauth2/auth',
+      :token_credential_uri =>  'https://www.googleapis.com/oauth2/v3/token'
 
     })
     return google_api_client
@@ -34,7 +36,7 @@ class Event < ActiveRecord::Base
   def start_date_time
     sd = proposal.start_date
     st = proposal.start_time.in_time_zone('Islamabad')
-    sz = proposal.time_zone
+
 
     sdt = DateTime.new(sd.year, sd.month, sd.day, st.hour, st.min)
 
@@ -43,7 +45,7 @@ class Event < ActiveRecord::Base
   def end_date_time
     ed = proposal.end_date
     et = proposal.end_time.in_time_zone('Islamabad')
-    ez = proposal.time_zone
+
 
     edt = DateTime.new(ed.year, ed.month, ed.day, et.hour, et.min)
   end

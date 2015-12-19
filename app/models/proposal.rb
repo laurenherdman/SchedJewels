@@ -25,7 +25,7 @@ class Proposal < ActiveRecord::Base
 		self.start_time = win.start_time
 		self.end_date = win.end_date
 		self.end_time = win.end_time
-		self.time_zone = win.time_zone
+
 
 		self.save
 	end

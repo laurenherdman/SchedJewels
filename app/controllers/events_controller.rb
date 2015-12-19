@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
       if @timeslot.proposal.save && @event.save
           @event.add_to_calendar(current_user)
-          redirect_to proposal_path(@proposal)
+          redirect_to proposal_path(@timeslot.proposal)
       else
         redirect_to proposal_path(@proposal), notice: "Your event did not save."
       end
