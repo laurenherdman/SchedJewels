@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217221517) do
+ActiveRecord::Schema.define(version: 20151218225842) do
+
+  create_table "comments", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "body_text"
+    t.integer  "proposal_id"
+    t.integer  "user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "google_event_id"
@@ -20,10 +28,8 @@ ActiveRecord::Schema.define(version: 20151217221517) do
     t.string   "title"
     t.text     "description"
     t.string   "location"
-    t.date     "start_date"
-    t.time     "start_time"
-    t.date     "end_date"
-    t.time     "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "proposals", force: :cascade do |t|
@@ -32,13 +38,12 @@ ActiveRecord::Schema.define(version: 20151217221517) do
     t.string   "title"
     t.text     "description"
     t.string   "location"
-    t.datetime "start_time"
-    t.datetime "end_time"
     t.integer  "owner_id"
-    t.date     "start_date"
-    t.date     "end_date"
     t.integer  "event_id"
-    t.string   "time_zone"
+    t.time     "start_time"
+    t.date     "start_date"
+    t.time     "end_time"
+    t.date     "end_date"
   end
 
   create_table "proposals_users", force: :cascade do |t|
@@ -49,12 +54,11 @@ ActiveRecord::Schema.define(version: 20151217221517) do
   create_table "timeslots", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "proposal_id"
     t.time     "start_time"
     t.date     "start_date"
     t.time     "end_time"
     t.date     "end_date"
-    t.integer  "proposal_id"
-    t.string   "time_zone"
   end
 
   create_table "users", force: :cascade do |t|

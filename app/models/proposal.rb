@@ -6,6 +6,9 @@ class Proposal < ActiveRecord::Base
 	has_and_belongs_to_many :users
 	belongs_to :event
 
+	has_many :comments
+	has_many :commenting_users, through: :comments, :source => :user
+
 	accepts_nested_attributes_for :timeslots, reject_if: :all_blank, allow_destroy: true
 
 	def winning_timeslot

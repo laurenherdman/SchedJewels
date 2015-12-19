@@ -23,5 +23,18 @@
 		<% end %>
 	</ul>
 	<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
-
 </div>
+
+<div>
+	<h3>Comments:</h3>
+
+			<ul>
+				<% @proposal.comments.each do |comment| %>
+				<li><% comment_user = comment.user.name %>
+				<p> <%= comment_user %> Says:</p>
+				<%= comment.body_text %></li>
+			<% end %>
+		</ul>
+	</div>
+
+		<%= render partial: 'comments/comment_form' %>

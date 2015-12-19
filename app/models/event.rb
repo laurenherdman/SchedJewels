@@ -35,17 +35,16 @@ class Event < ActiveRecord::Base
 
   def start_date_time
     sd = proposal.start_date
-    st = proposal.start_time
-    sz = proposal.time_zone.to_s
+    st = proposal.start_time.in_time_zone('Islamabad')
+    sz = proposal.time_zone
 
     sdt = DateTime.new(sd.year, sd.month, sd.day, st.hour, st.min)
-    sdt_string = sdt.to_s
-    return sdt_string.insert(-1, sz)
+
   end
 
   def end_date_time
     ed = proposal.end_date
-    et = proposal.end_time
+    et = proposal.end_time.in_time_zone('Islamabad')
     ez = proposal.time_zone
 
     edt = DateTime.new(ed.year, ed.month, ed.day, et.hour, et.min)
@@ -57,7 +56,7 @@ class Event < ActiveRecord::Base
     @result = client.execute(
       :api_method => service.events.insert,
       :parameters => {'calendarId' => 'primary' },
-      :body_object => {'summary' => self.title, 'description' => self.description, 'location' => self.location,  'start' => { 'dateTime' => self.start_date_time }, 'end' => { 'dateTime' => self.end_date_time} },
+      :body_object => {'summary' => self.title, 'description' => self.description, 'location' => self.location,  'start' => { 'dateTime' => self.start_date_time}, 'end' => { 'dateTime' => self.end_date_time } },
       :headers => {'Content-Type' => 'application/json'})
   end
 

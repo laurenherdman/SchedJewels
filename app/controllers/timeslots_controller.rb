@@ -8,7 +8,7 @@ class TimeslotsController < ApplicationController
   end
 
   def create
-  	@timeslot = Timeslot.new(timeslot_params)
+  	@timeslot = Timeslot.new(timeslot_params).in_time_zone('Eastern Time (US & Canada)')
   end
 
   def destroy
@@ -17,6 +17,6 @@ class TimeslotsController < ApplicationController
 
   private
   	def timeslot_params
-  		params.require(:timeslot).permit(:start_date, :start_time, :end_date, :end_time)
+  		params.require(:timeslot).permit(:start_date, :start_time, :end_date, :end_time, :time_zone)
   	end
 end
