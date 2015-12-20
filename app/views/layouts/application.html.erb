@@ -18,7 +18,17 @@
  	<%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if user_signed_in? %>
+  <li>
+  Signed in as:
+  <%= current_user.name %>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>
+  </li>
+<% end %>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
