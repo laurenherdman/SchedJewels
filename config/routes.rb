@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get '/home' => 'staticpages#home'
   get '/signin' => 'staticpages#home'
+  get '/about' => 'staticpages#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
