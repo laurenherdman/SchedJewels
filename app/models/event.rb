@@ -56,7 +56,7 @@ class Event < ActiveRecord::Base
     @result = client.execute(
       :api_method => service.events.insert,
       :parameters => {'calendarId' => 'primary' },
-      :body_object => {'summary' => self.title, 'description' => self.description, 'location' => self.location,  'start' => { 'dateTime' => self.start_date_time}, 'end' => { 'dateTime' => self.end_date_time }},
+      :body_object => {'summary' => self.title, 'description' => self.description, 'location' => self.location,  'start' => { 'dateTime' => self.start_date_time}, 'end' => { 'dateTime' => self.end_date_time } },
       :headers => {'Content-Type' => 'application/json'})
   end
 
