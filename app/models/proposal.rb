@@ -35,9 +35,11 @@ class Proposal < ActiveRecord::Base
 		self.attendees.each do |a| 
 			attendee_array << a.email_address
 		end
-		 	return attendee_array
+		attendee_array.each do |x|
+			array = x.split
+			array.unshift 'email'
+			return array.to_h
+		end
 	end
-	
-
 
 end
