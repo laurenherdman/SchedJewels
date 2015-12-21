@@ -16,6 +16,11 @@
 @import "proposals";
 @import "staticpages";
 
+body {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
 .simple-calendar {
   text-align: center;
   margin: 3em;
