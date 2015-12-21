@@ -32,6 +32,7 @@ gem 'devise'
 gem 'pry-rails'
 gem 'figaro'
 gem 'cocoon'
+gem 'better_errors'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
