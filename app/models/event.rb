@@ -60,4 +60,14 @@ class Event < ActiveRecord::Base
       :headers => {'Content-Type' => 'application/json'})
   end
 
+  def show_calendar(user)
+    client = google_client(user)
+    service = client.discovered_api('calendar', 'v3')
+    @result = client.execute(
+      :api_method => service.events.calendar_list.list,
+      :parameters => {'calendarId' => 'primary' },
+      :body_object => {'summary' => self.title, 'description' => self.description, 'location' => self.location,  'start' => { 'dateTime' => self.start_date_time}, 'end' => { 'dateTime' => self.end_date_time } },
+      :headers => {'Content-Type' => 'application/json'})
+  end
+
 end
