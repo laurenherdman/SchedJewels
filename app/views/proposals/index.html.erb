@@ -22,10 +22,11 @@
 	<div class="col-xs-9" id="proposal_holder">
 	<% @proposals.each do |p| %>
 	<div class="proposal">
-		<h1 class="p_title"> <%= p.title %> </h1>
+	<h1 class = "p_title"><%= link_to p.title, proposal_path(p) %></h1>
+<!-- 		<h1 class="p_title"> <%= p.title %> </h1> -->
 		<div class="time_holder">
-			<p class="p_start_date"> <%= p.start_date %> </p>
-			<p class="p_start_time"> <%= p.start_time %> </p>
+			<p class="p_start_date"> <%= p.start_date.try(:strftime, '%b. %e, %Y' ' at') %>
+			<p class="p_start_time"> <%= p.start_time.try(:strftime, '%I:%M %p') %> </p>
 		</div>
 	</div>
 	<% end %>
