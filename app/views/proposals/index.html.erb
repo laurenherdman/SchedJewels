@@ -3,20 +3,20 @@
 		<div class="user_holder">
 			<p id="user_name"> <%= current_user.name %> </p>
 			<div id="img_holder">
-				<img id="user_image" src="https://placehold.it/100x100"> 
+				<img id="user_image" src="https://placehold.it/100x100">
 			</div>
 		</div>
 		<div class="sidebar_option">
-			<p class="option_text" id="toption">My Calendar</p>
+			<a href="/events" class="option_text" id="toption">My Calendar</a>
 		</div>
 		<div class="sidebar_option">
-			<p class="option_text" id="toption">Create An Event</p>
+			<a href='/proposals/new' class="option_text" id="toption">Create An Event</a>
 		</div>
 		<div class="sidebar_option">
-			<p class="option_text" id="toption">View Events</p>
+			<a href='/proposals' class="option_text" id="toption">View Events</a>
 		</div>
 		<div class="sidebar_option">
-			<p class="option_text" id="toption">Partner/Group</p>
+			<a href='' class="option_text" id="toption">Partner/Group</a>
 		</div>
 	</div>
 	<div class="col-xs-9" id="proposal_holder">
@@ -24,8 +24,8 @@
 	<div class="proposal">
 		<h1 class="p_title"> <%= p.title %> </h1>
 		<div class="time_holder">
-			<p class="p_start_time"> <%= p.start_time %> </p>
 			<p class="p_start_date"> <%= p.start_date %> </p>
+			<p class="p_start_time"> <%= p.start_time %> </p>
 		</div>
 	</div>
 	<% end %>

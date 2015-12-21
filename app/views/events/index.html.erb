@@ -1,4 +1,32 @@
-<div class="simple_calendar">
+<div class="row" id="proposal_index">
+	<div class="col-xs-3" id="sidebar">
+		<div class="user_holder">
+			<p id="user_name"> <% if current_user %>
+  			<%= current_user.name %>
+  				<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+					<% else %>
+  			<%= link_to "Sign Up", new_user_registration_path %>
+		 <% end %> </p>
+			<div id="img_holder">
+				<img id="user_image" src="https://placehold.it/100x100">
+			</div>
+		</div>
+		<div class="sidebar_option">
+			<a href="/events" class="option_text" id="toption">My Calendar</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/proposals/new' class="option_text" id="toption">Create An Event</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/proposals' class="option_text" id="toption">View Events</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='' class="option_text" id="toption">Partner/Group</a>
+		</div>
+	</div>
+
+<div class="col-md-9">
+	<div class="simple_calendar">
 	<%= month_calendar events: @events do |date, events| %>
   <%= date.strftime("%e") %>
 
@@ -8,4 +36,6 @@
     </div>
   <% end %>
 <% end %>
+</div>
+</div>
 </div>

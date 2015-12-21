@@ -3,20 +3,20 @@
 		<div class="user_holder">
 			<p id="user_name"> <%= current_user.name %> </p>
 			<div id="img_holder">
-				<img id="user_image" src="https://placehold.it/100x100"> 
+				<img id="user_image" src="https://placehold.it/100x100">
 			</div>
 		</div>
 		<div class="sidebar_option">
-			<p class="option_text" id="toption">My Calendar</p>
+			<a href="/events" class="option_text" id="toption">My Calendar</a>
 		</div>
 		<div class="sidebar_option">
-			<p class="option_text" id="toption">Create An Event</p>
+			<a href='/proposals/new' class="option_text" id="toption">Create An Event</a>
 		</div>
 		<div class="sidebar_option">
-			<p class="option_text" id="toption">View Events</p>
+			<a href='/proposals' class="option_text" id="toption">View Events</a>
 		</div>
 		<div class="sidebar_option">
-			<p class="option_text" id="toption">Partner/Group</p>
+			<a href='' class="option_text" id="toption">Partner/Group</a>
 		</div>
 	</div>
 
@@ -26,7 +26,7 @@
 		<h1 id="create">Create An Event </h1>
 	<%= form_for @proposal do |f| %>
 		<div class="col-xs-4">
-			<div class="row"> 
+			<div class="row">
 				<h1 class="form_row_title">
 					Event Description
 				</h1>
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 		<div class="col-xs-4">
-			<div class="row"> 
+			<div class="row">
 				<h1 class="form_row_title">
 					Potential Times
 				</h1>
@@ -61,7 +61,7 @@
 				<% end %>
 		</div>
 		<div class="col-xs-4">
-			<div class="row"> 
+			<div class="row">
 				<h1 class="form_row_title">
 					Attendees
 				</h1>
