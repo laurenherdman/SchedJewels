@@ -42,6 +42,9 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
+    autoprefixer-rails (6.2.1)
+      execjs
+      json
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -49,6 +52,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.1)
     cocoon (1.2.6)
@@ -199,6 +205,8 @@ GEM
       faraday (~> 0.9)
       jwt (~> 1.5)
       multi_json (~> 1.10)
+    simple_calendar (2.0.3)
+      rails (>= 3.0)
     slop (3.6.0)
     spring (1.6.0)
     sprockets (3.5.2)
@@ -232,6 +240,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  bootstrap-sass (~> 3.3.6)
   byebug
   cocoon
   coffee-rails (~> 4.1.0)
@@ -245,8 +254,9 @@ DEPENDENCIES
   omniauth-google-oauth2
   pry-rails
   rails (= 4.2.5)
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
+  simple_calendar
   spring
   sqlite3
   turbolinks

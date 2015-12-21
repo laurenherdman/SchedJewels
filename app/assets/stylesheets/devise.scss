@@ -1,0 +1,35 @@
+// Devise Styles //
+
+#sign_in_container {
+	height: 100vh;
+	max-width: 100vw;
+}
+
+#google_sign_in {
+	-webkit-box-shadow: inset 0px 5px 10px 5px #FFFFFF;
+	-moz-box-shadow: inset 0px 5px 10px 5px #FFFFFF;
+	box-shadow: inset 0px 5px 10px 5px #FFFFFF;
+	height: 100vh;
+	background-color: #F1F1F1;
+	margin-top: -3vh;
+}
+
+#sign_in_or_up {
+	margin-top: 20vh;
+	margin-bottom: 5vh;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 300;
+}
+
+#sign_in_button img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#create_one {
+	text-align: center;
+	display: inline-block;
+}
+
