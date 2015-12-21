@@ -1,3 +1,112 @@
 // Place all the styles related to the proposals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Proposal Index //
+
+#proposal_index {
+	height: 100vh;
+}
+
+#proposal_holder {
+	margin-top: -3vh;
+	background-color: #F1F1F1;
+	height: 100vh;
+}
+
+.proposal {
+	background-color: SkyBlue;
+	display: flex;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 20vh;
+	border-radius: 10px;
+	margin-top: 2vh;
+}
+
+.p_title {
+	height: 100%;
+	width: 60%;
+	margin-top: 6%;
+	text-align: center;
+	font-size: 3em;
+}
+
+.time_holder {
+	height: 100%;
+}
+
+.p_start_time {
+	text-align: center;
+	min-height: 50%;
+	font-size: 1.5em;
+	padding-top: 5%;
+}
+
+.p_start_date {
+	text-align: center;
+	padding-top: 5%;
+	min-height: 50%;
+	font-size: 1.5em;
+}
+
+// Side Bar //
+
+#sidebar {
+	margin-top: -3vh;
+	height: 100%;
+	background-image: url('background.png')
+}
+
+.user_holder {
+	display: flex;
+}
+
+#user_name {
+	margin-top: 6vh;
+	display: inline-block;
+	width: 60%;
+	text-align: center;
+	font-size: 1.8em;
+}
+
+#img_holder {
+	width: 40%;
+}
+
+#user_image {
+	margin-top: 3vh;
+	height: auto;
+	width: 8vw;
+	border-radius: 8vw;
+}
+
+.col-xs-3 {
+	padding-right: 0;
+}
+
+.sidebar_option {
+	padding-right: 0;
+	margin-top: 5vh;
+	height: 8%;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+	border-top: 3vh;
+	background-color: rgba(63, 191, 191, 0.6)
+}
+
+.option_text {
+	line-height: 8vh;
+}
+
+
+
+
+
+
