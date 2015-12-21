@@ -1,6 +1,6 @@
-
-<%= month_calendar events: @events do |date, events| %>
-  <%= date %>
+<div class="simple_calendar">
+	<%= month_calendar events: @events do |date, events| %>
+  <%= date.strftime("%e") %>
 
   <% events.each do |event| %>
     <div>
@@ -8,3 +8,4 @@
     </div>
   <% end %>
 <% end %>
+</div>
