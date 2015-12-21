@@ -33,6 +33,15 @@ class Event < ActiveRecord::Base
 	    :headers => {'Content-Type' => 'application/json'})
 	end
 
+  def get_calendar(user)
+    client = google_client(user)
+    service = client.discovered_api('calendar', 'v3')
+    @result = client.execute(
+      :api_method => service.calendars.get,
+      :parameters => {'calendarId' => 'primary' },
+      :headers => {'Content-Type' => 'application/json'})
+  end
+
   def start_date_time
     sd = proposal.start_date
     st = proposal.start_time.in_time_zone('Islamabad')

@@ -44,13 +44,13 @@ a:hover, a:visited, a:link, a:active {
 }
 
 .nav_option {
-	
+
 	display: inline-block;
 	height: 100%;
 	padding-left: 2.5vw;
 	padding-right: 2.5vw;
 	text-align: center;
-	line-height: 7vh;	
+	line-height: 7vh;
 	font-size: 1.5em;
 }
 
@@ -81,17 +81,11 @@ a:hover, a:visited, a:link, a:active {
 	a {
 		text-decoration: none;
 		color: white;
+	}
 
-<<<<<<< HEAD
 	a:hover {
 		text-decoration: none;
 		color: #3c3a40;
-=======
-		:hover {
-			text-decoration: none;
-			color: white
-		}
->>>>>>> editnavbar
 	}
 
 	#start {
