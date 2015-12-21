@@ -24,8 +24,38 @@ a:hover, a:visited, a:link, a:active {
 	overflow-x: hidden;
 }
 
+.home_navbar {
+	margin-top: 3vh;
+	width: 100%;
+	height: 10vh;
+	display: flex;
+	flex-direction: row-reverse;
+	color: white;
+
+	a {
+		text-decoration: none;
+		color: #D9D9D9;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: #F9F9F9;
+	}
+}
+
+.nav_option {
+	
+	display: inline-block;
+	height: 100%;
+	padding-left: 2.5vw;
+	padding-right: 2.5vw;
+	text-align: center;
+	line-height: 7vh;	
+	font-size: 1.5em;
+}
+
 #logo_img {
-	margin-top: -10vh;
+	margin-top: -15vh;
 	max-height: 80vh;
 	max-width: 100%;
 	display: block;
@@ -51,11 +81,17 @@ a:hover, a:visited, a:link, a:active {
 	a {
 		text-decoration: none;
 		color: white;
-	}
 
+<<<<<<< HEAD
 	a:hover {
 		text-decoration: none;
 		color: #3c3a40;
+=======
+		:hover {
+			text-decoration: none;
+			color: white
+		}
+>>>>>>> editnavbar
 	}
 
 	#start {
@@ -74,11 +110,18 @@ a:hover, a:visited, a:link, a:active {
 	}
 }
 
+// Block Spacer
+
+#block_spacer {
+	height: 5vh;
+}
+
+
 // FEATURE BLOCK //
 
 #feature_block {
-	height: 150vh;
-	width: 100%;
+	height: 160vh;
+	width: 100vw;
 	background-image: url('backgroundflip.png');
 	background-size: 100%;
 	padding-top: 2vh;
@@ -88,6 +131,11 @@ a:hover, a:visited, a:link, a:active {
 	margin-right: 0;
 	margin-left: 0;
 	overflow-x: hidden;
+	padding-bottom: 10vh;
+}
+
+#reduce_marg {
+	margin-top: 0;
 }
 
 #feature_block_title_text {
@@ -101,8 +149,9 @@ a:hover, a:visited, a:link, a:active {
 }
 
 .feature_img {
-	max-height: 100%;
-	max-width: 100%;
+	max-width: 80%;
+	max-height: 60%;
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
