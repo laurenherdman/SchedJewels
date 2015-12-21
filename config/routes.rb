@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users,
   :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
+  resources :calendars
   resources :events
   resources :proposals do
     resources :comments, only: [:show, :create, :destroy]
