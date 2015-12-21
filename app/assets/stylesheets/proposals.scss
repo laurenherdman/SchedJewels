@@ -7,10 +7,10 @@
 
 #proposal_index {
 	height: 100vh;
+	width: 100%;
 }
 
 #proposal_holder {
-	margin-top: -3vh;
 	background-color: #F1F1F1;
 	height: 100vh;
 }
@@ -55,9 +55,8 @@
 // Side Bar //
 
 #sidebar {
-	margin-top: -3vh;
 	height: 100%;
-	background-image: url('background.png')
+	background-image: url('background.png');
 }
 
 .user_holder {
@@ -85,6 +84,7 @@
 
 .col-xs-3 {
 	padding-right: 0;
+	margin-right: 0;
 }
 
 .sidebar_option {
@@ -106,7 +106,98 @@
 }
 
 
+// Proposal New //
 
+.col-xs-9 {
+	padding-right: 0;
+	padding-left: 0;
+}
+#proposal_form {
+	height: 150vh;
+	padding-left: 0;
+	background-color: #F9F9F9;
+}
 
+#create {
+	font-size: 4em;
+	text-align: center;
+	background-image: url('header.png');
+	margin-left: 0;
+	margin-right: 0;
+	color: white;
+}
 
+.event-fields {
+	margin-top: 3vh;
+	font-size: 1.5em;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 
+	input {
+		font-size: 1em;
+		margin-top: 1vh;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 20vw;
+	}
+}
+
+.button {
+	margin-top: 5vh;
+	margin-left: auto;
+	margin-right: auto;
+	height: 7vh;
+	width: 20vw;
+}
+
+.form_title {
+	font-size: 2em;
+	text-align: center;
+}
+
+#time_title {
+	margin-top: 5vh;
+	text-align: center;
+	font-size: 2em;
+}
+
+#timeslot_form {
+	border-radius: 10px;
+	margin-bottom: 30vh;
+	margin-top: 3vh;
+	margin-left: auto;
+	margin-right: auto;
+	height: 30vh;
+	font-size: 1.5em;
+
+	.timeslot-fields {
+		text-align: center;
+		font-size: 1em;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 3vh;
+		width: 20vw;
+
+		input {
+			font-size: 1em;
+			margin-top: 1vh;
+			width: 20vw;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+.form_row_title {
+	margin-top: 5vh;
+	text-align: center;
+	font-size: 2em;
+}
+
+.time_slot_holder {
+	margin-bottom: 5vh;
+}

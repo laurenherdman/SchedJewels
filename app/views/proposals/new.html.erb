@@ -1,45 +1,91 @@
-<%= form_for @proposal do |f| %>
-
-	<h1>Create An Event </h1>
-
-
-	<div class="event-fields">
-		<%= f.label :title %><br>
-		<%= f.text_field :title %>
+<div class="row" id="proposal_index">
+	<div class="col-xs-3" id="sidebar">
+		<div class="user_holder">
+			<p id="user_name"> <%= current_user.name %> </p>
+			<div id="img_holder">
+				<img id="user_image" src="https://placehold.it/100x100"> 
+			</div>
+		</div>
+		<div class="sidebar_option">
+			<p class="option_text" id="toption">My Calendar</p>
+		</div>
+		<div class="sidebar_option">
+			<p class="option_text" id="toption">Create An Event</p>
+		</div>
+		<div class="sidebar_option">
+			<p class="option_text" id="toption">View Events</p>
+		</div>
+		<div class="sidebar_option">
+			<p class="option_text" id="toption">Partner/Group</p>
+		</div>
 	</div>
 
-	<div class="event-fields">
-		<%= f.label :description %><br>
-		<%= f.text_field :description %>
+
+	<div class="col-xs-9" id="proposal_form">
+	<div class="row">
+		<h1 id="create">Create An Event </h1>
+	<%= form_for @proposal do |f| %>
+		<div class="col-xs-4">
+			<div class="row"> 
+				<h1 class="form_row_title">
+					Event Description
+				</h1>
+			</div>
+			<div class="event-fields">
+				<%= f.label :title %><br>
+				<%= f.text_field :title %>
+			</div>
+
+			<div class="event-fields">
+				<%= f.label :description %><br>
+				<%= f.text_field :description %>
+			</div>
+
+			<div class="event-fields">
+				<%= f.label :location %><br>
+				<%= f.text_field :location %>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="row"> 
+				<h1 class="form_row_title">
+					Potential Times
+				</h1>
+			</div>
+				<button class="button">
+					<%= link_to_add_association 'Add A Time', f, :timeslots %>
+				</button>
+
+				<%= f.fields_for :timeslots do |timeslot| %>
+						<%= render "timeslot_fields", :f => timeslot %>
+				<% end %>
+		</div>
+		<div class="col-xs-4">
+			<div class="row"> 
+				<h1 class="form_row_title">
+					Attendees
+				</h1>
+			</div>
+			<div class="attendee_form">
+				<%= f.fields_for :attendees do |attendee| %>
+					<%= render "attendee_fields", :f => attendee %>
+				<% end %>
+			</div>
+
+			<button class="button">
+				<%= link_to_add_association 'Add Another Attendee', f, :attendees %>
+			</button>
+		</div>
+
 	</div>
+		<div class="row">
+			<div class="event-fields">
+				<%= f.submit :submit %>
+			</div>
+		</div>
 
-	<div class="event-fields">
-		<%= f.label :location %><br>
-		<%= f.text_field :location %>
-	</div>
-
-	<h3>Add A Suggested Time</h3>
-		<%= f.fields_for :timeslots do |timeslot| %>
-			<%= render "timeslot_fields", :f => timeslot %>
-	<% end %>
-
-	<div>
-		<%= link_to_add_association 'Add Another Suggested Time', f, :timeslots %>
-	</div>
-
-	<div>
-		<%= f.fields_for :attendees do |attendee| %>
-			<%= render "attendee_fields", :f => attendee %>
 		<% end %>
+
 	</div>
+</div>
 
-	<div>
-		<%= link_to_add_association 'Add Another Attendee', f, :attendees %>
-	</div>
-
-
-	<div class="event-fields">
-		<%= f.submit :submit %>
-	</div>
-
-<% end %>

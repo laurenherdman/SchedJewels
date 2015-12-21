@@ -13,11 +13,10 @@ a:hover, a:visited, a:link, a:active {
 }
 
 #home_block {
-	height: 97vh;
+	height: 100vh;
 	width: 100%;
 	background-image: url('background.png');
 	background-size: 100%;
-	margin-top: -3vh;
 	padding: 0;
 	margin-right: 0;
 	margin-left: 0;
@@ -81,17 +80,11 @@ a:hover, a:visited, a:link, a:active {
 	a {
 		text-decoration: none;
 		color: white;
+	}
 
-<<<<<<< HEAD
 	a:hover {
 		text-decoration: none;
 		color: #3c3a40;
-=======
-		:hover {
-			text-decoration: none;
-			color: white
-		}
->>>>>>> editnavbar
 	}
 
 	#start {
@@ -120,10 +113,9 @@ a:hover, a:visited, a:link, a:active {
 // FEATURE BLOCK //
 
 #feature_block {
-	height: 160vh;
-	width: 100vw;
+	height: 120vh;
+	width: 100%;
 	background-image: url('backgroundflip.png');
-	background-size: 100%;
 	padding-top: 2vh;
 	color: white;
 	box-shadow: 0px 0px 20px 0px;
@@ -164,11 +156,11 @@ a:hover, a:visited, a:link, a:active {
 .feature_title {
 	text-align: center;
 	font-size: 2.5em;
-	margin-bottom: 3vh;
+	margin-bottom: 2vh;
 }
 
 .feature_paragraph {
 	text-align: center;
 	font-size: 1.5em;
-	line-height: 6vh;
+	line-height: 5vh;
 }
