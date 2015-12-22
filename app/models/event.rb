@@ -79,4 +79,9 @@ class Event < ActiveRecord::Base
       :headers => {'Content-Type' => 'application/json'})
   end
 
+   def start_time
+        self.start_date_time if proposal
+         ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
+    end
+
 end
