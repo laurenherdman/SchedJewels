@@ -55,7 +55,7 @@
 
 	<div class="comment-pad">
 		<h1 class="">Comments:</h1>
-						<ul>
+						<ul class="comment-list">
 							<li><% @proposal.comments.each do |comment| %>
 							<p><span class="comment-name"><%= comment.user.name %> says:</span> <%= comment.body_text %></p></li>
 					<% end %>
