@@ -1,5 +1,8 @@
 <div class="row" id="proposal_index">
 	<div class="col-xs-3" id="sidebar">
+			<div>
+			<a href='/'><img src="/favicon.png" class="diamond-pic"></a>
+		</div>
 		<div class="user_holder">
 				<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
@@ -32,7 +35,7 @@
 	<div class="row scrollable">
 		<% @proposals.each do |p| %>
 		<div class="proposal">
-		
+
 			<div class="time_holder">
 				<h1 class="p_title"><%= link_to p.title, proposal_path(p) %></h1>
 				<p class="p_start_date"> <%= p.start_date.try(:strftime, '%A, %b. %e, %Y' ' at') %> <%= p.start_time.try(:strftime, '%I:%M %p') %> </p>
