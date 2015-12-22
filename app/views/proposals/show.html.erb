@@ -28,7 +28,7 @@
 	</div>
 
 	<div class="col-xs-9" id="proposal_show_container">
-	
+
 		<h1 class="event_page_header"> Details for <%= @proposal.title.capitalize %></h1>
 		<div class="spacer">
 		<div class="row scrollable_form">
@@ -41,26 +41,29 @@
 					<% @proposal.timeslots.each do |t| %>
 						<div class="a_proposal">
 							<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
-							
+
 							<%= form_for [@proposal, t, Vote.new] do |f| %>
 								<%= f.submit "Vote" %>
-							<% end %>		
+							<% end %>
 						</div>
 					<% end %>
 					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
 				</div>
 			</div>
-		
-		<div class=" row comment_holder">
-			<h1>Comments:</h1>
-						<% @proposal.comments.each do |comment| %>
-						<p><%= comment.user.name %></p>
-						<p> <%= comment.body_text %></p>
+
+		<br>
+
+	<div class="comment-pad">
+		<h1 class="">Comments:</h1>
+						<ul>
+							<li><% @proposal.comments.each do |comment| %>
+							<p><span class="comment-name"><%= comment.user.name %> says:</span> <%= comment.body_text %></p></li>
 					<% end %>
 				</ul>
-		</div>
-
+	</div>
+	<div class="comment-pad">
 			<%= render partial: 'comments/comment_form' %>
+	</div>
 	</div>
 	</div>
 	</div>

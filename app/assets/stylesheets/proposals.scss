@@ -30,7 +30,7 @@ body {
 }
 
 .proposal {
-	
+
 	background-color: #F1F1F1;
 	display: flex;
 	width: 45%;
@@ -336,7 +336,7 @@ body {
 }
 
 .potential_timeslots {
-	
+
 }
 
 .prop_date {
@@ -350,4 +350,28 @@ body {
 }
 
 .comment_holder {
+}
+
+//// COMMENT ///
+
+.c_location {
+	text-align: center;
+	font-size: 1.4em;
+	height: 50%;
+	margin: 0;
+}
+
+.text-box {
+	width: 40em;
+	height: 5em;
+}
+
+.comment-name {
+	font-weight: bold;
+	color: #006699;
+}
+
+ul {
+	list-style-type: none;
+	display: inline;
 }

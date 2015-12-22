@@ -1,13 +1,15 @@
-<% if current_user %>
+<div class="">
+	<% if current_user %>
 
-	<%= form_for [@proposal, @comment]  do |f| %>
+		<%= form_for [@proposal, @comment]  do |f| %>
 
-	  <div>
-	    <p><%= f.label :comment, "Add A Comment:" %></p>
-	    <p><%= f.text_area :body_text %></p>
-	  </div>
+		  <div class="comment-box">
+		    <p><%= f.label :comment, "Add A Comment:" %></p>
+		    <p><%= f.text_area :body_text, :class => 'text-box' %></p>
+		    <%= f.submit "Comment", :class => 'comment-button' %>
+		  </div>
 
-	  <%= f.submit "Comment" %>
 
-	 <% end %>
-<% end%>
+		 <% end %>
+	<% end%>
+</div>
