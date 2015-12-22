@@ -4,6 +4,9 @@ class Event < ActiveRecord::Base
 	belongs_to :user
 	has_one :proposal
 
+  validates :proposal, presence: true
+
+
 	after_commit on: :create
 
   def google_client(user)
@@ -78,5 +81,10 @@ class Event < ActiveRecord::Base
       :body_object => {'summary' => self.title, 'description' => self.description, 'location' => self.location,  'start' => { 'dateTime' => self.start_date_time}, 'end' => { 'dateTime' => self.end_date_time } },
       :headers => {'Content-Type' => 'application/json'})
   end
+
+   def start_time
+        self.start_date_time if proposal
+         ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
+    end
 
 end
