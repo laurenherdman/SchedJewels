@@ -3,9 +3,6 @@
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
-  				<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-					<% else %>
-  			<%= link_to "Sign Up", new_user_registration_path %>
 		 <% end %> </p>
 			<div id="img_holder">
 				<img id="user_image" src="https://placehold.it/100x100">
@@ -23,73 +20,81 @@
 		<div class="sidebar_option">
 			<a href='' class="option_text" id="toption">Partner/Group</a>
 		</div>
+		<div class="sidebar_option">
+			<p class="option_text">
+			<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+			</p>
+		</div>
 	</div>
 
 
 	<div class="col-xs-9" id="proposal_form">
-	<h1 class="page_header">Create An Event </h1>
-	<%= form_for @proposal do |f| %>
-		<div class="col-xs-4">
-			<div class="row">
-				<h1 class="form_row_title">
-					Event Description
-				</h1>
-			</div>
-			<div class="event-fields">
-				<%= f.label :title %><br>
-				<%= f.text_field :title %>
-			</div>
+		<h1 class="page_header fixed">Create An Event </h1>
+		<div class="spacer"></div>
+			<div class="row scrollable_form">
+			<%= form_for @proposal do |f| %>
+				<div class="col-xs-4">
+					<div class="row">
+						<h1 class="form_row_title">
+							Event Description
+						</h1>
+					</div>
+					<div class="event-fields">
+						<%= f.label :title %><br>
+						<%= f.text_field :title %>
+					</div>
 
-			<div class="event-fields">
-				<%= f.label :description %><br>
-				<%= f.text_field :description %>
-			</div>
+					<div class="event-fields">
+						<%= f.label :description %><br>
+						<%= f.text_field :description %>
+					</div>
 
-			<div class="event-fields">
-				<%= f.label :location %><br>
-				<%= f.text_field :location %>
-			</div>
+					<div class="event-fields">
+						<%= f.label :location %><br>
+						<%= f.text_field :location %>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="row">
+						<h1 class="form_row_title">
+							Potential Times
+						</h1>
+					</div>
+						<button class="button">
+							<%= link_to_add_association 'Add A Time', f, :timeslots %>
+						</button>
+
+						<%= f.fields_for :timeslots do |timeslot| %>
+								<%= render "timeslot_fields", :f => timeslot %>
+						<% end %>
+				</div>
+				<div class="col-xs-4">
+					<div class="row">
+						<h1 class="form_row_title">
+							Attendees
+						</h1>
+					</div>
+					<div class="attendee_form">
+						<%= f.fields_for :attendees do |attendee| %>
+							<%= render "attendee_fields", :f => attendee %>
+						<% end %>
+					</div>
+
+					<button class="button">
+						<%= link_to_add_association 'Add Another Attendee', f, :attendees %>
+					</button>
+				</div>
 		</div>
-		<div class="col-xs-4">
-			<div class="row">
-				<h1 class="form_row_title">
-					Potential Times
-				</h1>
+			<div class="row submit_row">
+				<div class="event-fields">
+					<%= f.submit :submit %>
+				</div>
 			</div>
-				<button class="button">
-					<%= link_to_add_association 'Add A Time', f, :timeslots %>
-				</button>
 
-				<%= f.fields_for :timeslots do |timeslot| %>
-						<%= render "timeslot_fields", :f => timeslot %>
-				<% end %>
+			<% end %>
+
 		</div>
-		<div class="col-xs-4">
-			<div class="row">
-				<h1 class="form_row_title">
-					Attendees
-				</h1>
-			</div>
-			<div class="attendee_form">
-				<%= f.fields_for :attendees do |attendee| %>
-					<%= render "attendee_fields", :f => attendee %>
-				<% end %>
-			</div>
-
-			<button class="button">
-				<%= link_to_add_association 'Add Another Attendee', f, :attendees %>
-			</button>
 		</div>
-
-	</div>
-		<div class="row">
-			<div class="event-fields">
-				<%= f.submit :submit %>
-			</div>
-		</div>
-
-		<% end %>
-
 	</div>
 </div>
 
