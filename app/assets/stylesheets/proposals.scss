@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	background-color: #F1F1F1
+}
 
 // Proposal Index //
 
@@ -118,13 +121,17 @@
 	background-color: #F9F9F9;
 }
 
-#create {
+.page_header {
 	font-size: 4em;
+	height: 10vh;
 	text-align: center;
 	background-image: url('header.png');
+	margin-top: 0;
 	margin-left: 0;
 	margin-right: 0;
 	color: white;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 }
 
 .event-fields {
@@ -146,6 +153,7 @@
 }
 
 .button {
+	display: block;
 	margin-top: 5vh;
 	margin-left: auto;
 	margin-right: auto;
@@ -200,4 +208,82 @@
 
 .time_slot_holder {
 	margin-bottom: 5vh;
+}
+
+// Proposal Show //
+
+#proposal_show {
+	height: 100vh;
+	width: 100%;
+}
+
+#proposal_show_container {
+	background-color: #F1F1F1;
+}
+
+.a_proposal {
+	margin-top: 3vh;
+	padding: 2.5vh;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid grey;
+}
+
+.new_vote {
+	width: 10vw;
+	margin-left: auto;
+	margin-right: auto;
+
+	input {
+		height: 7vh;
+		width: 10vw;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 1.5em;
+	}
+}
+
+.button_to {
+	width: 15vw;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5vh;
+
+	input {
+		height: 7vh;
+		width: 15vw;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 1.5em;
+	}
+}
+
+.prop_title {
+	font-size: 3em;
+	text-align: center;
+}
+
+.prop_description {
+	font-size: 2em;
+	text-align: center;
+}
+
+.location {
+	font-size: 2em;
+	text-align: center;
+}
+
+.potential_timeslots {
+	
+}
+
+.prop_date {
+	text-align: center;
+	font-size: 2em;
+}
+
+.prop_time {
+	text-align: center;
+	font-size: 2em;
 }

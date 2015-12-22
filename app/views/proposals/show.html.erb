@@ -1,27 +1,45 @@
-<div>
-	<ul>
-		<li><p class="bold">Title:</p>
-			<%= @proposal.title %></li>
-		<li><p class="bold">Description:</p>
-			<%= @proposal.description %></li>
-		<li><p class="bold">Location:</p>
-			<%= @proposal.location %></li>
+<div class="row" id="proposal_show">
+	<div class="col-xs-3" id="sidebar">
+		<div class="user_holder">
+			<p id="user_name"> <%= current_user.name %> </p>
+			<div id="img_holder">
+				<img id="user_image" src="https://placehold.it/100x100">
+			</div>
+		</div>
+		<div class="sidebar_option">
+			<a href="/events" class="option_text" id="toption">My Calendar</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/proposals/new' class="option_text" id="toption">Create An Event</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/proposals' class="option_text" id="toption">View Events</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='' class="option_text" id="toption">Partner/Group</a>
+		</div>
+	</div>
 
-	<% @proposal.timeslots.each do |t| %>
-		<li><p class="bold">Date:</p>
-			<%= t.start_date.strftime("%b. %d, %Y") %></li>
-		<li><p class="bold">From:</p>
-			<%= t.start_time.strftime("%I:%M %p") %> to <%= t.end_time.strftime("%I:%M %p")  %></li>
+	<div class="col-xs-9" id="proposal_show_container">
+		<h1 class="page_header"> Details for <%= @proposal.title.capitalize %></h1>
+		<div>
+	<div container="proposal_info">
+		<h1 class="prop_title"><%= @proposal.title %></h1>
+		<p class="location"><%= @proposal.location %> </p>
+		<p class="prop_description"><%= @proposal.description %></p>
 
-
-
-		<%= form_for [@proposal, t, Vote.new] do |f| %>
-			<%= f.submit "Vote" %>
+	<div class="potential_timeslots">
+		<% @proposal.timeslots.each do |t| %>
+			<div class="a_proposal">
+				<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
+				
+				<%= form_for [@proposal, t, Vote.new] do |f| %>
+					<%= f.submit "Vote" %>
+				<% end %>		
+			</div>
 		<% end %>
-
-		<% end %>
-	</ul>
-	<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+		<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+	</div>
 </div>
 
 <div>
@@ -37,3 +55,7 @@
 	</div>
 
 		<%= render partial: 'comments/comment_form' %>
+
+</div>
+	</div>
+
