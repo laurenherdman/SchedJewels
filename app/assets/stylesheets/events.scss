@@ -1,6 +1,7 @@
 .page_header {
 	font-size: 4em;
-	height: 10vh;
+	width: 100%;
+	height: 15vh;
 	text-align: center;
 	background-image: url('header.png');
 	margin-top: 0;
@@ -9,14 +10,22 @@
 	color: white;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
+	line-height: 15vh;
+}
+
+.calendar_view {
+	height: 100vh;
 }
 
 .col-xs-9 {
 	padding-right: 0;
 	padding-left: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .col-xs-3 {
 	padding-right: 0;
 	margin-right: 0;
+	height: 100vh;
 }

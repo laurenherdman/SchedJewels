@@ -3,9 +3,6 @@
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
-  				<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-					<% else %>
-  			<%= link_to "Sign Up", new_user_registration_path %>
 		 <% end %> </p>
 			<div id="img_holder">
 				<img id="user_image" src="https://placehold.it/100x100">
@@ -23,20 +20,24 @@
 		<div class="sidebar_option">
 			<a href='' class="option_text" id="toption">Partner/Group</a>
 		</div>
+		<div class="sidebar_option">
+			<p class="option_text">
+			<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+			</p>
+		</div>
 	</div>
 
-<div class="col-md-9">
-	<h1 class="page_header"> My Calendar </h1>
+<div class="col-xs-9 calendar_body">
+	<h1 class="event_page_header"> <%= current_user.name %>'s Calendar</h1>
 	<div class="simple_calendar">
-	<%= month_calendar events: @events do |date, events| %>
-  <%= date.strftime("%e") %>
-
-  <% events.each do |event| %>
-    <div>
-      <%= event.name %>
-    </div>
-  <% end %>
-<% end %>
-</div>
+		<%= month_calendar events: @events do |date, events| %>
+	  	<%= date.strftime("%e") %>
+		  	<% events.each do |event| %>
+		    	<div>
+		    	  <%= event.name %>
+		    	</div>
+		  	<% end %>
+		<% end %>
+	</div>
 </div>
 </div>

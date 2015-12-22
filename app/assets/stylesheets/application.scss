@@ -21,9 +21,41 @@ body {
 	font-weight: 300;
 }
 
+.event_page_header {
+  font-size: 4em;
+  width: 100%;
+  height: 15vh;
+  text-align: center;
+  background-image: url('header.png');
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  line-height: 15vh;
+}
+
+.calendar_body {
+  height: 85vh;
+}
+
+.col-xs-9 {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col-xs-3 {
+  padding-right: 0;
+  margin-right: 0;
+}
+
+
 .simple-calendar {
   text-align: center;
-  margin: 3em;
+  margin: 2em;
 
   table {
     -webkit-border-horizontal-spacing: 0px;
@@ -38,7 +70,7 @@ body {
 
   tr {
     border-collapse: collapse;
-    height: 100px;
+    height: 80px;
   }
 
   th {

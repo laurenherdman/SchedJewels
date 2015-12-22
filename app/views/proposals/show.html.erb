@@ -3,9 +3,6 @@
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
-  				<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-					<% else %>
-  			<%= link_to "Sign Up", new_user_registration_path %>
 		 <% end %> </p>
 			<div id="img_holder">
 				<img id="user_image" src="https://placehold.it/100x100">
@@ -23,30 +20,38 @@
 		<div class="sidebar_option">
 			<a href='' class="option_text" id="toption">Partner/Group</a>
 		</div>
+		<div class="sidebar_option">
+			<p class="option_text">
+			<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+			</p>
+		</div>
 	</div>
 
 	<div class="col-xs-9" id="proposal_show_container">
-		<h1 class="page_header"> Details for <%= @proposal.title.capitalize %></h1>
-		<div container="proposal_info">
-			<h1 class="prop_title"><%= @proposal.title %></h1>
-			<p class="location"><%= @proposal.location %> </p>
-			<p class="prop_description"><%= @proposal.description %></p>
+	
+		<h1 class="event_page_header"> Details for <%= @proposal.title.capitalize %></h1>
+		<div class="spacer">
+		<div class="row scrollable_form">
+			<div class="proposal_info">
+				<h1 class="prop_title"><%= @proposal.title %></h1>
+				<p class="location"><%= @proposal.location %> </p>
+				<p class="prop_description"><%= @proposal.description %></p>
 
-			<div class="potential_timeslots">
-				<% @proposal.timeslots.each do |t| %>
-					<div class="a_proposal">
-						<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
-						
-						<%= form_for [@proposal, t, Vote.new] do |f| %>
-							<%= f.submit "Vote" %>
-						<% end %>		
-					</div>
-				<% end %>
-				<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+				<div class="potential_timeslots">
+					<% @proposal.timeslots.each do |t| %>
+						<div class="a_proposal">
+							<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
+							
+							<%= form_for [@proposal, t, Vote.new] do |f| %>
+								<%= f.submit "Vote" %>
+							<% end %>		
+						</div>
+					<% end %>
+					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+				</div>
 			</div>
-		</div>
-
-		<div class="comment_holder">
+		
+		<div class=" row comment_holder">
 			<h1>Comments:</h1>
 						<% @proposal.comments.each do |comment| %>
 						<p><%= comment.user.name %></p>
@@ -56,7 +61,8 @@
 		</div>
 
 			<%= render partial: 'comments/comment_form' %>
-
+	</div>
+	</div>
 	</div>
 </div>
 
