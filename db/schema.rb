@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221183744) do
+ActiveRecord::Schema.define(version: 20151222201226) do
 
   create_table "attendees", force: :cascade do |t|
     t.string   "email_address"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151221183744) do
     t.string   "location"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.integer  "user_id"
   end
 
   create_table "proposals", force: :cascade do |t|

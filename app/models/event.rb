@@ -4,12 +4,12 @@ class Event < ActiveRecord::Base
 	belongs_to :user
 	has_one :proposal
 
-  validates :proposal, presence: true
+  validates_uniqueness_of :google_event_id
 
 
 	after_commit on: :create
 
-  def google_client(user)
+  def self.google_client(user)
   	# user = self.user
     # Application name is what you named it in Google Developer Console
     google_api_client = Google::APIClient.new({
@@ -28,7 +28,7 @@ class Event < ActiveRecord::Base
   end
 
 	def get_all_calendars(user)
-	  client = google_client(user)
+	  client = Event.google_client(user)
 	  service = client.discovered_api('calendar', 'v3')
 	  @result = client.execute(
 	    :api_method => service.calendar_list.list,
@@ -37,7 +37,7 @@ class Event < ActiveRecord::Base
 	end
 
   def get_calendar(user)
-    client = google_client(user)
+    client = Event.google_client(user)
     service = client.discovered_api('calendar', 'v3')
     @result = client.execute(
       :api_method => service.calendars.get,
@@ -63,7 +63,7 @@ class Event < ActiveRecord::Base
   end
 
   def add_to_calendar(user)
-    client = google_client(user)
+    client = Event.google_client(user)
     service = client.discovered_api('calendar', 'v3')
     @result = client.execute(
       :api_method => service.events.insert,
@@ -72,19 +72,20 @@ class Event < ActiveRecord::Base
       :headers => {'Content-Type' => 'application/json'})
   end
 
-  def show_calendar(user)
-    client = google_client(user)
+  def self.show_calendar(user)
+    client = Event.google_client(user)
     service = client.discovered_api('calendar', 'v3')
     @result = client.execute(
-      :api_method => service.events.calendar_list.list,
-      :parameters => {'calendarId' => 'primary' },
-      :body_object => {'summary' => self.title, 'description' => self.description, 'location' => self.location,  'start' => { 'dateTime' => self.start_date_time}, 'end' => { 'dateTime' => self.end_date_time } },
-      :headers => {'Content-Type' => 'application/json'})
+
+      :api_method => service.events.list,
+      :parameters => {'calendarId' => 'primary' })
+    JSON.load(@result.response.body)["items"]
+
   end
 
-   def start_time
-        self.start_date_time if proposal
-         ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
-    end
+  # def start_time
+  #   self.start_date_time if proposal
+  #   ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
+  # end
 
 end

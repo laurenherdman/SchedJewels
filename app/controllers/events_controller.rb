@@ -13,15 +13,27 @@ class EventsController < ApplicationController
 
 
       if @timeslot.proposal.save && @event.save
-        @event.add_to_calendar(current_user)
-        redirect_to proposal_path(@timeslot.proposal)
+          @event.add_to_calendar(current_user)
+          redirect_to proposal_path(@timeslot.proposal)
       else
         redirect_to proposal_path(@proposal), notice: "Your event did not save."
       end
     end
 
     def index
-      @events = Event.all
+      Event.show_calendar(current_user).each do |event|
+        Event.create({
+          user_id: current_user.id,
+          start_time: event["start"]["dateTime"],
+          end_time: event["end"]["dateTime"],
+          location: event["location"],
+          description: event["description"],
+          title: event["summary"],
+          google_event_id: event["id"]
+          })
+      end
+
+      @events = current_user.events
     end
 
     def destroy
