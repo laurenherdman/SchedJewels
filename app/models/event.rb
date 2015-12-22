@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
 	has_one :proposal
 
   validates_uniqueness_of :google_event_id
+  before_validation :add_to_calendar
 
 
 	after_commit on: :create
@@ -62,14 +63,16 @@ class Event < ActiveRecord::Base
     edt = DateTime.new(ed.year, ed.month, ed.day, et.hour, et.min)
   end
 
-  def add_to_calendar(user)
-    client = Event.google_client(user)
+  def add_to_calendar
+    client = Event.google_client(self.user)
     service = client.discovered_api('calendar', 'v3')
     @result = client.execute(
       :api_method => service.events.insert,
       :parameters => {'calendarId' => 'primary' },
       :body_object => {'summary' => self.title, 'description' => self.description, 'location' => self.location,  'start' => { 'dateTime' => self.start_date_time}, 'end' => { 'dateTime' => self.end_date_time } },
       :headers => {'Content-Type' => 'application/json'})
+    googleeventid = JSON.load(@result.response.body)["id"]
+    self.update_attributes(google_event_id: googleeventid)
   end
 
   def self.show_calendar(user)

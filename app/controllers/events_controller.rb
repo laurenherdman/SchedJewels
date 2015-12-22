@@ -10,13 +10,13 @@ class EventsController < ApplicationController
       @event = Event.new
       @timeslot.proposal.event = @event
       @event.title = @timeslot.proposal.title
+      @event.user = current_user
 
 
       if @timeslot.proposal.save && @event.save
-          @event.add_to_calendar(current_user)
           redirect_to proposal_path(@timeslot.proposal)
       else
-        redirect_to proposal_path(@proposal), notice: "Your event did not save."
+         redirect_to proposal_path(@timeslot.proposal), notice: "Your event did not save."
       end
     end
 
