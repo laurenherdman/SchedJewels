@@ -46,11 +46,11 @@ a:hover, a:visited, a:link, a:active {
 
 	display: inline-block;
 	height: 100%;
-	padding-left: 2.5vw;
-	padding-right: 2.5vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
 	text-align: center;
 	line-height: 7vh;
-	font-size: 1.5em;
+	font-size: 2em;
 }
 
 #logo_img {
@@ -109,6 +109,39 @@ a:hover, a:visited, a:link, a:active {
 	height: 5vh;
 }
 
+// Footer //
+
+#footer {
+	width: 100vw;
+	background-color: #141414;
+}
+
+.creators {
+	margin-top: 2vh;
+	height: 100%; 
+	color: white;
+	padding-left: 5vw;
+
+	#created_by {
+		font-size: 2em;
+	}
+
+	.name {
+		font-size: 1.5em;
+		color: white;
+	}
+}
+
+.media {
+	height: 100%;
+	color: white;
+}
+
+.social_media {
+	margin-top: 0;
+	max-height: 30vh;
+	max-width: auto;
+}
 
 // FEATURE BLOCK //
 
