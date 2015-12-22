@@ -5,10 +5,14 @@ class Event < ActiveRecord::Base
 	has_one :proposal
 
   validates_uniqueness_of :google_event_id
-  before_validation :add_to_calendar
+  before_validation :add_to_calendar, if: :not_yet_added
 
 
 	after_commit on: :create
+
+  def not_yet_added
+    self.google_event_id.nil?
+  end
 
   def self.google_client(user)
   	# user = self.user
