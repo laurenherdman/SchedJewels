@@ -1,7 +1,12 @@
 <div class="row" id="proposal_index">
 	<div class="col-xs-3" id="sidebar">
 		<div class="user_holder">
-			<p id="user_name"> <%= current_user.name %> </p>
+			<p id="user_name"> <% if current_user %>
+  			<%= current_user.name %>
+  				<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+					<% else %>
+  			<%= link_to "Sign Up", new_user_registration_path %>
+		 <% end %> </p>
 			<div id="img_holder">
 				<img id="user_image" src="https://placehold.it/100x100">
 			</div>
