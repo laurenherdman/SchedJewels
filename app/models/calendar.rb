@@ -1,8 +1,5 @@
 class Calendar < ActiveRecord::Base
 
-require 'rubygems'
-require 'google_calendar'
-
 # Create an instance of the calendar.
 cal = Google::Calendar.new(:client_id     => ENV["GOOGLE_KEY"],
                            :client_secret => ENV["GOOGLE_SECRET"],
