@@ -1,6 +1,6 @@
 class AttendeesController < ApplicationController
-	
-	def new 
+
+	def new
 		@attendee = Attendee.new
 	end
 
@@ -20,5 +20,5 @@ class AttendeesController < ApplicationController
 	private
 	def attendee_params
 		params.require(:attendee).permit(:email_address)
-
+	end
 end
