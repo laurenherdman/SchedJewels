@@ -24,8 +24,8 @@ class EventsController < ApplicationController
       Event.show_calendar(current_user).each do |event|
         Event.create({
           user_id: current_user.id,
-          start_time: event["start"]["dateTime"],
-          end_time: event["end"]["dateTime"],
+          start_time: event["start"]["datetime"],
+          end_time: event["end"]["datetime"],
           location: event["location"],
           description: event["description"],
           title: event["summary"],

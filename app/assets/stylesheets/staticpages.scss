@@ -147,6 +147,7 @@ a:hover, a:visited, a:link, a:active {
 #footer {
 	width: 100vw;
 	background-color: #141414;
+	height: 30vh;
 }
 
 .creators {
@@ -168,18 +169,56 @@ a:hover, a:visited, a:link, a:active {
 .media {
 	height: 100%;
 	color: white;
+	position: relative;
 }
 
 .social_media {
-	margin-top: 0;
-	max-height: 30vh;
+	display: inline-block;
+	vertical-align: middle;
+	max-height: 20vh;
 	max-width: auto;
+}
+
+@media (max-width: 775px) {
+	.social_media {
+		max-height: 15vh;
+	}
+
+	#created_by {
+		font-size: 1.75em;
+	}
+
+	.name {
+		font-size: 1.25em;
+	}
+}
+
+@media (max-width: 600px) {
+	.social_media {
+		max-height: 10vh;	
+	}
+}
+
+@media (max-width: 450px) {
+	div.col-xs-6.media {
+		width: 100%;
+	}
+
+	div.col-xs-6.creators {
+		width: 0%;
+	}
+
+	.social_media {
+		max-height: 15vh;
+	}
+	.creators {
+		display: none;
+	}
 }
 
 // FEATURE BLOCK //
 
 #feature_block {
-	height: 120vh;
 	width: 100%;
 	background-image: image-url('backgroundflip.png');
 	background-repeat: no-repeat;
