@@ -44,12 +44,19 @@
 					<% @proposal.timeslots.each do |t| %>
 						<div class="a_proposal">
 							<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
-
-							<%= form_for [@proposal, t, Vote.new] do |f| %>
-								<%= f.submit "Vote" %>
+					
+						<% t.votes.each do |v| %>
+							<% if v.user_id == current_user.id %>
+								
+							<% else %>
+								<%= form_for [@proposal, t, Vote.new], remote: true do |f| %>
+								<%= f.submit "Vote", :class => "vote-submit" %>
+								<% end %>
 							<% end %>
+						<% end %>
 						</div>
 					<% end %>
+						
 					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
 				</div>
 			</div>
