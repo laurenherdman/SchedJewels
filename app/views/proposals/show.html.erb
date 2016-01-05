@@ -57,6 +57,7 @@
 				<% end %>
 				<% if current_user.id == @proposal.owner_id %>
 					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+				<% else %>
 				<% end %>
 			</div>
 		</div>
