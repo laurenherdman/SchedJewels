@@ -48,6 +48,9 @@
 					<% if t.votes.size != 0 %>
 						<% t.votes.each do |v| %>
 							<% if v.user_id == current_user.id %>
+								<div class="voted">  
+									<p> You've Voted </p>
+								</div>
 
 							<% else %>
 								<%= form_for [@proposal, t, Vote.new], remote: true do |f| %>
@@ -63,8 +66,9 @@
 					
 					</div>	
 				<% end %>
-					
-				<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+				<% if current_user.id == @proposal.owner_id %>
+					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+				<% end %>
 			</div>
 		</div>
 
