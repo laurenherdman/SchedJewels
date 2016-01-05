@@ -1,4 +1,34 @@
-<div class="fixed-nav-bar">
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+	<div class="navbar-header">
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">Toggle Navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+  <a href="/" class="navbar-brand">
+		<%= image_tag "sjlogosolo.png", id: "logo_solo" %>
+	</a>
+	</div>
+
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<!-- <div class="row" id="home_navbar"> -->
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav_option"><a href="users/sign_in">Start Now</a></li>
+        <li class="nav_option"><a href="#about">How It Works</a></li>
+        <li class="nav_option"><a href="#feature">Features</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</div>
+</nav>
+
+<!-- Previous Nav Bar -->
+<!-- <div class="fixed-nav-bar">
 	<a name="home"></a>
 		<div class="row" id="home_navbar">
 			<div class="spacer"></div>
@@ -17,10 +47,10 @@
 					<p> Start Now </p>
 				</div>
 			</a>
-			<a href="/">
-					<%= image_tag "sjlogosolo.png", id: "logo_solo" %>
-			</a>
-		</div>
+
+		</div> -->
+<!-- Previous Nav Bar -->
+
 <!-- 		<a href="users/sign_in">
 			<div class="nav_option">
 				<p> Sign In </p>
