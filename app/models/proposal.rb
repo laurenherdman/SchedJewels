@@ -30,16 +30,14 @@ class Proposal < ActiveRecord::Base
 		self.save
 	end
 
-	# def attendee_to_array
-	# 	attendee_array = []
-	# 	self.attendees.each do |a| 
-	# 		attendee_array << a.email_address
-	# 	end
-	# 	attendee_array.each do |x|
-	# 		array = x.split
-	# 		array.unshift 'email'
-	# 		return array.to_h
-	# 	end
-	# end
+
+	def attendee_array 
+        attend_array = []  
+        self.attendees.each do |a|
+        	attend_array << { "email" => a.email_address }
+        end 
+        puts attend_array
+        self.save
+    end 
 
 end

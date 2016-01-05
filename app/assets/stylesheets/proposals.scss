@@ -184,7 +184,6 @@ body {
 
 .scrollable_form {
 	height: 70vh;
-    overflow-y: auto;
     padding-bottom: 2vh;
 }
 
@@ -291,6 +290,10 @@ body {
 	border: 1px solid grey;
 }
 
+.proposal_info {
+	height: 20vh;
+}
+
 .new_vote {
 	width: 10vw;
 	margin-left: auto;
@@ -320,19 +323,29 @@ body {
 	}
 }
 
+.prop {
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .prop_title {
+	padding: 2vh;
 	font-size: 3em;
 	text-align: center;
+	background-color: #444444;
 }
 
 .prop_description {
 	font-size: 2em;
 	text-align: center;
+	background-color: #666666;
 }
 
-.location {
+.prop_location {
 	font-size: 2em;
 	text-align: center;
+	background-color: #888888;
 }
 
 .potential_timeslots {
