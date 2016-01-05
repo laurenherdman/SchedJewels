@@ -45,18 +45,22 @@
 				<% @proposal.timeslots.each do |t| %>
 					<div class="a_proposal">
 						<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
-							
+
 							<% if Vote.where("user_id = ? AND timeslot_id = ?", current_user.id, t.id) != [] %>
 								<div> You've Voted </div>
 							<% else %>
 								<%= form_for [@proposal, t, Vote.new], remote: true do |f| %>
 									<%= f.submit "Vote", :class => "vote-submit" %>
-								<% end %>				
+								<% end %>
 							<% end %>
 					</div>
 				<% end %>
 
-				<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+				<% if current_user.id == @proposal.owner_id %>
+					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+				<% else %>
+				<% end %>
+
 			</div>
 		</div>
 
