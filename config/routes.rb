@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
   resources :calendars
   resources :events
+  resources :groups do
+    resources :comments, only: [:show, :create, :destroy]
+  end
+
+  resources :lists
+  resources :items
   resources :proposals do
     resources :comments, only: [:show, :create, :destroy]
     resources :attendees, only: [:new, :create, :destroy]
