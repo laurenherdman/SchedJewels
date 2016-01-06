@@ -22,14 +22,15 @@ class EventsController < ApplicationController
 
     def index
       Event.show_calendar(current_user).each do |event|
+        binding.pry
         Event.create({
           user_id: current_user.id,
-          start_time: event["start"]["datetime"],
-          end_time: event["end"]["datetime"],
+          start_time: event["start"]["dateTime"],
+          end_time: event["end"]["dateTime"],
           location: event["location"],
           description: event["description"],
           title: event["summary"],
-          google_event_id: event["id"]
+          google_event_id: event["id"],
           })
       end
 

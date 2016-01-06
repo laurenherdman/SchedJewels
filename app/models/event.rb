@@ -79,6 +79,7 @@ class Event < ActiveRecord::Base
                        'start' => { 'dateTime' => self.start_date_time},
                        'end' => { 'dateTime' => self.end_date_time },
                        'attendees' => self.proposal.attendee_array,
+                       'sendNotifications' => 'true',
                        'reminders' => {
                               'useDefault' => false,
                               'overrides' => [
