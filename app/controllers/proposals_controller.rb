@@ -16,7 +16,12 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.new(proposal_params)
     @proposal.owner_id = current_user.id
 
+
+
     if @proposal.save
+      @proposal.attendee_array.each do |a|
+        UserMailer.new_event_email(a).deliver_now
+      end
       redirect_to proposal_path(@proposal)
     else
       render :new
