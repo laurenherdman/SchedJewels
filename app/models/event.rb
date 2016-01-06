@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
 	belongs_to :user
 	has_one :proposal
 
-  validates_uniqueness_of :google_event_id
+  validates :google_event_id, uniqueness: { scope: :user_id }
   before_validation :add_to_calendar, if: :not_yet_added
 
 
@@ -50,22 +50,22 @@ class Event < ActiveRecord::Base
       :headers => {'Content-Type' => 'application/json'})
   end
 
-  def start_date_time
-    sd = proposal.start_date
-    st = proposal.start_time.in_time_zone('Islamabad')
+  # def start_date_time
+  #   sd = proposal.start_date
+  #   st = proposal.start_time.in_time_zone('Islamabad')
 
 
-    sdt = DateTime.new(sd.year, sd.month, sd.day, st.hour, st.min)
+  #   sdt = DateTime.new(sd.year, sd.month, sd.day, st.hour, st.min)
 
-  end
+  # end
 
-  def end_date_time
-    ed = proposal.end_date
-    et = proposal.end_time.in_time_zone('Islamabad')
+  # def end_date_time
+  #   ed = proposal.end_date
+  #   et = proposal.end_time.in_time_zone('Islamabad')
 
 
-    edt = DateTime.new(ed.year, ed.month, ed.day, et.hour, et.min)
-  end
+  #   edt = DateTime.new(ed.year, ed.month, ed.day, et.hour, et.min)
+  # end
 
   def add_to_calendar
     client = Event.google_client(self.user)
