@@ -21,7 +21,7 @@
 			<a href='/proposals' class="option_text" id="toption">View Events</a>
 		</div>
 		<div class="sidebar_option">
-			<a href='' class="option_text" id="toption">Partner/Group</a>
+			<a href='/groups' class="option_text" id="toption">Partner/Group</a>
 		</div>
 		<div class="sidebar_option">
 			<p class="option_text">
@@ -30,11 +30,11 @@
 		</div>
 	</div>
 
-	<h1>
+	<h1>Your Groups</h1>
 		<% @groups.each do |g| %>
 		<ul>
 		<li>
-		<%= link_to g.title, group_path(g) %></h1></li>
+		<%= link_to g.title, group_path(g) %></li>
 		</ul>
 	<% end %>
 <p></p>
