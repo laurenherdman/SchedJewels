@@ -31,6 +31,7 @@ body {
 
 .navbar-default {
   background-image: image-url('header.png');
+  border: 0px solid transparent;
 }
 
 .navbar-default .navbar-brand {
@@ -94,7 +95,9 @@ body {
   height: 85vh;
 }
 
-
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
 
 
 .simple-calendar {
