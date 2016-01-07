@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151223175033) do
+ActiveRecord::Schema.define(version: 20160106203634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20151223175033) do
     t.text     "body_text"
     t.integer  "proposal_id"
     t.integer  "user_id"
+    t.integer  "group_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -38,11 +39,34 @@ ActiveRecord::Schema.define(version: 20151223175033) do
     t.string   "title"
     t.text     "description"
     t.string   "location"
-    t.date     "start_date"
-    t.time     "start_time"
-    t.date     "end_date"
-    t.time     "end_time"
     t.integer  "user_id"
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "owner_id"
+    t.integer  "user_id"
+    t.string   "title"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "group_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "owner_id"
+    t.string   "group_id"
+    t.string   "integer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "proposals", force: :cascade do |t|

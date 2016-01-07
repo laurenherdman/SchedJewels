@@ -1,6 +1,6 @@
- <div class="row" id="proposal_index">
+<div class="row" id="proposal_index">
 	<div class="col-xs-3" id="sidebar">
-			<div>
+		<div>
 			<a href='/'><img src="/favicon.png" class="diamond-pic"></a>
 		</div>
 		<div class="user_holder">
@@ -21,7 +21,7 @@
 			<a href='/proposals' class="option_text" id="toption">View Events</a>
 		</div>
 		<div class="sidebar_option">
-			<a href='' class="option_text" id="toption">Partner/Group</a>
+			<a href='/groups' class="option_text" id="toption">Partner/Group</a>
 		</div>
 		<div class="sidebar_option">
 			<p class="option_text">
@@ -30,17 +30,19 @@
 		</div>
 	</div>
 
-<div class="col-xs-9 calendar_body">
-	<h1 class="event_page_header"> <%= current_user.name %>'s Calendar</h1>
-	<div class="simple_calendar">
-		<%= month_calendar(attribute: :start_date_time, events: @events) do |date, events| %>
-	  	<%= date.strftime("%e") %>
-		  	<% events.each do |event| %>
-		    	<div>
-		    	  <%= event.title %>
-		    	</div>
-		  	<% end %>
-		<% end %>
+
+<h1><%= @group.title %></h1>
+
+<div class="comment-pad">
+			<h1 class="">Comments:</h1>
+					<ul class="comment-list">
+						<% @group.comments.each do |comment| %>
+							<li><p><span class="comment-name"> <%= comment.user.name %> says:</span> <%= comment.body_text %></p></li>
+						<% end %>
+					</ul>
+		</div>
+		<div class="comment-pad">
+				<%= render partial: 'comment_form' %>
+		</div>
 	</div>
-</div>
-</div>
+
