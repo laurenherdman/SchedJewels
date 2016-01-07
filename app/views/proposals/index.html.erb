@@ -1,5 +1,5 @@
 <div class="row" id="proposal_index">
-	<div class="col-xs-3" id="sidebar">
+	<div class="col-md-3" id="sidebar">
 			<div>
 			<a href='/'><img src="/favicon.png" class="diamond-pic"></a>
 		</div>
@@ -29,10 +29,9 @@
 			</p>
 		</div>
 	</div>
-	<div class="col-xs-9" id="proposal_holder">
-	<h1 class="page_header fixed"> My Events </h1>
+	<div class="col-md-9" id="proposal_holder">
+	<h1 class="page_header"> My Events </h1>
 	<div class="spacer"></div>
-	<div class="row">
 		<% @proposals.each do |p| %>
 			<% p.attendees.each do |a| %>
 		 		<% if current_user.id == p.owner_id || current_user.email == a.email_address %>
@@ -47,6 +46,5 @@
 				<% end %>
 			<% end %>
 		<% end %>
-	</div>
 	</div>
 </div>
