@@ -33,6 +33,14 @@
 
 <h1><%= @group.title %></h1>
 
+<% @group.lists.each do |l| %>
+	<ul>
+	<li><%= link_to l.name, group_lists_path(:group_id) %></li>
+	</ul>
+<% end %>
+
+<%= render :partial => '/lists/lists' %>
+
 <div class="comment-pad">
 			<h1 class="">Comments:</h1>
 					<ul class="comment-list">
