@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
   def show
   	@group = Group.find(params[:id])
     @comment = Comment.new
+    @list = @group.lists.build
   end
 
 

@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   resources :events
   resources :groups do
     resources :comments, only: [:show, :create, :destroy]
+    resources :lists do
+      resources :items
+    end
   end
 
-  resources :lists
-  resources :items
   resources :proposals do
     resources :comments, only: [:show, :create, :destroy]
     resources :attendees, only: [:new, :create, :destroy]

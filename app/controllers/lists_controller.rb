@@ -4,9 +4,9 @@ class ListsController < ApplicationController
   	@list.user = current_user
 
   	if @list.save
-  		redirect_to group_path(@list.group)
+  		redirect_to group_path(@list.group), notice: "You've created a list."
   	else
-  		redirect_to group_path(@list.group)
+  		redirect_to group_path(@list.group), notice: "There was an error."
   	end
   end
 
@@ -19,6 +19,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @list = List.find(params[:id])
   end
 
 private
