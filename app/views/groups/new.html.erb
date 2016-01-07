@@ -1,8 +1,6 @@
-<div class="row" id="proposal_index">
-	<div class="col-xs-3" id="sidebar">
-		<div>
-			<a href='/'><img src="/favicon.png" class="diamond-pic"></a>
-		</div>
+<div class="row no-margin" >
+
+	<div class="col-md-3 fixed" id="sidebar">
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
@@ -29,6 +27,9 @@
 			</p>
 		</div>
 	</div>
+	<div class="col-md-3 spacer">
+	</div>
 
-
-<%= render "form" %>
+<div class="col-md-9" id="proposal_holder">
+	<%= render "form" %>
+</div>
