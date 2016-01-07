@@ -32,7 +32,7 @@
 	<div class="col-xs-9" id="proposal_holder">
 	<h1 class="page_header fixed"> My Events </h1>
 	<div class="spacer"></div>
-	<div class="row scrollable">
+	<div class="row">
 		<% @proposals.each do |p| %>
 			<% p.attendees.each do |a| %>
 		 		<% if current_user.id == p.owner_id || current_user.email == a.email_address %>

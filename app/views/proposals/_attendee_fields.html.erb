@@ -1,6 +1,9 @@
 <div class="nested-field">
-		<div class="event-fields">
-			<%= f.label :email_address %><br>
-			<%= f.email_field :email_address %>
-		</div>
+	<h1 class="input-title text-center">
+		Invitee Email:
+	<div class="input-group center-block">
+		<%= f.email_field :email_address, class: 'form-control center-block attendee-form form-width' %>
+	</div>
 </div>
+
+

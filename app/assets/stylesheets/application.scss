@@ -25,6 +25,39 @@ body {
   margin: 0;
 }
 
+.navbar {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px)
+{
+    .navbar-header
+    {
+        float: none;
+    }
+
+    .navbar-toggle
+    {
+        display: block;
+    }
+
+    .navbar-collapse.collapse
+    {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+  display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar-brand {
+    font-size: 1em;
+  }
+}
 .event_page_header {
   font-size: 4em;
   width: 100%;

@@ -8,12 +8,6 @@ body {
 
 // Proposal Index //
 
-.scrollable {
-    height: 85vh;
-    overflow-y: auto;
-    padding-bottom: 2vh;
-}
-
 .fixed {
 	position: fixed;
 	z-index: 2;
@@ -91,6 +85,12 @@ body {
 	background-image: image-url('background.png');
 }
 
+@media (max-width: 991px) {
+	#sidebar {
+	display: none;
+	}
+}
+
 .fixed {
     position: fixed;
 }
@@ -116,11 +116,6 @@ body {
 	height: auto;
 	width: 8vw;
 	border-radius: 8vw;
-}
-
-.col-xs-3 {
-	padding-right: 0;
-	margin-right: 0;
 }
 
 .sidebar_option {
@@ -153,19 +148,25 @@ body {
 
 // Proposal New //
 
-.col-xs-9 {
-	padding-right: 0;
-	padding-left: 0;
+.form-margin {
 }
+
+.form-width {
+	max-width: 90%;
+	display: block;
+	margin-left: 5%;
+	margin-right: auto;
+}
+
 #proposal_form {
-	height: 100vh;
-	padding-left: 0;
-	background-color: #F9F9F9;
+	min-height: 100vh;
+	background-color: #C9C9C9;
+
 }
 
 .page_header {
+
 	font-size: 4em;
-	width: 80%;
 	height: 15vh;
 	text-align: center;
 	background-image: image-url('header.png');
@@ -178,13 +179,27 @@ body {
 	line-height: 15vh;
 }
 
-.spacer {
-	height: 15vh;
-}
+@media (max-width: 992px) {
+	.page_header {
+		line-height: 7vh;
+		height: 7vh;
+		font-size: 2em;
+		border-bottom-right-radius: 5px;
+	}
 
-.scrollable_form {
-	height: 70vh;
-    padding-bottom: 2vh;
+	.form-block {
+		margin-top: 5vh;
+	}
+}
+.form-block {
+	border-radius: 10px;
+	background-color: rgba(0,0,0,0.2);
+	min-height: 70vh;
+	color: white;
+	padding-top: 5vh;
+	margin-bottom: 3vh;
+	background-image: image-url('background.png');
+
 }
 
 .event-fields {
@@ -212,6 +227,18 @@ body {
 	margin-right: auto;
 	height: 7vh;
 	width: 20vw;
+}
+
+.input-title {
+	display: block;
+	font-size: 16px;
+	margin-top: 2vh;
+}
+
+.timeslot-title {
+	display: block;
+	font-size: 16px;
+	margin-top: 2vh;
 }
 
 .form_title {
@@ -254,20 +281,46 @@ body {
 }
 
 .form_row_title {
-	margin-top: 5vh;
 	text-align: center;
-	font-size: 2em;
-}
-
-.time_slot_holder {
+	font-size: 1.5em;
+	display: block;
+	margin: 0;
 	margin-bottom: 5vh;
 }
 
+.time-form-margin {
+	display: block;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+	margin-bottom: -1vh;
+}
+
+.attendee-form-margin {
+	display: block;
+	color: black;
+}
+
+.add-button {
+	margin-top: 5vh;
+}
+
+
 .submit_row {
-	border-top: 1px solid #E8E8E8;
 	width: 100%;
 	margin-left: 0;
 	margin-right: 0;
+}
+
+.btn-xl {
+	background-color: #999999;
+    padding: 14px 35px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
 }
 
 // Proposal Show //

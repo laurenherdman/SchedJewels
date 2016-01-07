@@ -1,8 +1,9 @@
 <div class="row" id="proposal_index">
-	<div class="col-xs-3" id="sidebar">
-			<div>
-			<a href='/'><img src="/favicon.png" class="diamond-pic"></a>
-		</div>
+	
+
+
+
+	<div class="col-md-3" id="sidebar">
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
@@ -31,67 +32,72 @@
 	</div>
 
 
-	<div class="col-xs-9" id="proposal_form">
-		<h1 class="page_header fixed">Create An Event </h1>
+	<div class="col-md-9" id="proposal_form">
+		<h1 class="page_header">Create An Event </h1>
 		<div class="spacer"></div>
-			<div class="row scrollable_form">
+			<div class="row">
 			<%= form_for @proposal do |f| %>
-				<div class="col-xs-4">
-					<div class="row">
+				<div class="col-md-4">
+					<div class="form-block">
 						<h1 class="form_row_title">
 							Event Description
 						</h1>
-					</div>
-					<div class="event-fields">
-						<%= f.label :title %><br>
-						<%= f.text_field :title %>
-					</div>
-
-					<div class="event-fields">
-						<%= f.label :description %><br>
-						<%= f.text_field :description %>
-					</div>
-
-					<div class="event-fields">
-						<%= f.label :location %><br>
-						<%= f.text_field :location %>
+						<div class="center-block">						
+							<h1 class="input-title text-center">
+								Title
+							</h1>
+							<%= f.text_field :title, class: 'form-control form-margin form-width' %>
+						</div>
+						<div class="center-block">
+							<h1 class="input-title text-center">
+								Description
+							</h1>
+							<%= f.text_area :description, class: 'form-control form-margin form-width', rows: 3 %>
+						</div>	
+						<div class="center-block">						
+							<h1 class="input-title text-center">
+								Location
+							</h1>
+							<%= f.text_field :location, class: 'form-control form-margin form-width' %>
+						</div>
 					</div>
 				</div>
-				<div class="col-xs-4">
-					<div class="row">
+				<div class="col-md-4">
+					<div class="form-block">
 						<h1 class="form_row_title">
 							Potential Times
 						</h1>
-					</div>
-						<button class="button">
+
+						<button class='btn btn-default center-block add-button'>
 							<%= link_to_add_association 'Add A Time', f, :timeslots %>
 						</button>
 
 						<%= f.fields_for :timeslots do |timeslot| %>
 								<%= render "timeslot_fields", :f => timeslot %>
 						<% end %>
+					</div>
+
 				</div>
-				<div class="col-xs-4">
-					<div class="row">
+				<div class="col-md-4">
+					<div class="form-block">
 						<h1 class="form_row_title">
 							Attendees
 						</h1>
-					</div>
-					<div class="attendee_form">
-						<%= f.fields_for :attendees do |attendee| %>
-							<%= render "attendee_fields", :f => attendee %>
-						<% end %>
-					</div>
 
-					<button class="button">
-						<%= link_to_add_association 'Add Another Attendee', f, :attendees %>
-					</button>
+						<div class="attendee_form">
+							<%= f.fields_for :attendees do |attendee| %>
+								<%= render "attendee_fields", :f => attendee %>
+							<% end %>
+						</div>
+
+						<button class='btn btn-default center-block add-button'>
+							<%= link_to_add_association 'Add Another Attendee', f, :attendees %>
+						</button>
+					</div>
 				</div>
 		</div>
 			<div class="row submit_row">
-				<div class="event-fields">
-					<%= f.submit :submit %>
-				</div>
+					<%= f.submit 'Submit', class: 'btn btn-xl center-block' %>
 			</div>
 
 			<% end %>

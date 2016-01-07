@@ -1,23 +1,29 @@
 <div class="nested-field" id="timeslot_form">
+	<div class="timeslot-fields">
+		<h1 class="input-title text-center">
+				Start Date
+		</h1>
+		<%= f.date_field :start_date, class: 'time-form-margin form-control' %>
+	</div>
 
-		<div class="timeslot-fields">
-			<%= f.label :start_date %><br>
-			<%= f.date_field :start_date %>
-		</div>
+	<div class="timeslot-fields">
+		<h1 class="input-title text-center form-margin">
+			Start Time
+		</h1>
+		<%= f.time_field :start_time, class: 'time-form-margin form-control' %>
+	</div>
 
-		<div class="timeslot-fields">
-			<%= f.label :start_time %><br>
-			<%= f.time_field :start_time %>
-		</div>
+	<div class="timeslot-fields">
+		<h1 class="input-title text-center">
+			End Date
+		</h1>
+		<%= f.date_field :end_date, class: 'time-form-margin form-control' %>
+	</div>
 
-		<div class="timeslot-fields">
-			<%= f.label :end_date %><br>
-			<%= f.date_field :end_date %>
-		</div>
-
-		<div class="timeslot-fields">
-			<%= f.label :end_time %><br>
-			<%= f.time_field :end_time %>
-		</div>
-
+	<div class="timeslot-fields">
+		<h1 class="input-title text-center">
+			End Time
+		</h1>
+		<%= f.time_field :end_time, class: 'time-form-margin form-control' %>
+	</div>	
 </div>
