@@ -67,6 +67,8 @@ body {
 
 }
 
+
+
 .time_holder {
 	height: 50%;
 	width: 100%;
@@ -78,6 +80,17 @@ body {
 	text-align: center;
 	height: 50%;
 	font-size: 1.4em;
+}
+
+@media (max-width: 350px) {
+	.p_start_date {
+		margin-top: 2vh;
+		font-size: 1.2em;
+	}
+
+	.p_location {
+		font-size: 1.2em;
+	}
 }
 
 .p_location {
@@ -211,6 +224,7 @@ body {
 	padding-top: 5vh;
 	margin-bottom: 3vh;
 	background-image: image-url('background.png');
+	padding-bottom: 2vh;
 
 }
 
@@ -218,7 +232,7 @@ body {
 	.form-block {
 		margin-left: 2vh;
 		margin-right: 2vh;
-		min-height: 20vh;
+		min-height: 80vh;
 		padding-bottom: 5vh;
 	}
 }
@@ -279,7 +293,7 @@ body {
 	margin-top: 3vh;
 	margin-left: auto;
 	margin-right: auto;
-	height: 30vh;
+	min-height: 30vh;
 	font-size: 1.5em;
 
 	.timeslot-fields {
@@ -289,7 +303,6 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 3vh;
-		width: 20vw;
 
 		input {
 			font-size: 1em;

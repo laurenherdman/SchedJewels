@@ -72,7 +72,7 @@
 						<% end %>
 						</div>
 						<button class='btn btn-default center-block time-button'>
-							<%= link_to_add_association 'Add A Time', f, :timeslots %>
+							<%= link_to_add_association 'Add A Time', f, :timeslots, id: 'add-time-js' %>
 						</button>
 
 					</div>
@@ -88,13 +88,13 @@
 
 						<div class="attendee_form">
 							<%= f.fields_for :attendees do |attendee| %>
-								<%= render "attendee_fields", :f => attendee %>
+								<%= render "attendee_fields", f: attendee %>
 							<% end %>
 						</div>
 
 
 						<button class='btn btn-default center-block add-button'>
-							<%= link_to_add_association 'Add Another Attendee', f, :attendees %>
+							<%= link_to_add_association 'Add Another Attendee', f, :attendees, id: 'add-attendee-js' %>
 						</button>
 					</div>
 				</div>
