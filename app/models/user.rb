@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :votes
   has_and_belongs_to_many :proposals
+  has_many :items
+  has_many :groups
+  has_many :lists
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
