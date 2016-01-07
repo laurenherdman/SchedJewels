@@ -1,9 +1,6 @@
-<div class="row" id="proposal_index">
+<div class="row no-margin" >
 	
-
-
-
-	<div class="col-md-3" id="sidebar">
+	<div class="col-md-3 fixed" id="sidebar">
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
@@ -30,9 +27,10 @@
 			</p>
 		</div>
 	</div>
+	<div class="col-md-3 spacer">
+	</div>
 
-
-	<div class="col-md-9" id="proposal_form">
+	<div class="col-md-9" id="proposal_holder">
 		<h1 class="page_header">Create An Event </h1>
 		<div class="spacer"></div>
 			<div class="row">
@@ -46,19 +44,19 @@
 							<h1 class="input-title text-center">
 								Title
 							</h1>
-							<%= f.text_field :title, class: 'form-control form-margin form-width' %>
+							<%= f.text_field :title, placeholder: 'E.g, "Morning Lecutre"', class: 'form-control form-margin form-width' %>
 						</div>
 						<div class="center-block">
 							<h1 class="input-title text-center">
 								Description
 							</h1>
-							<%= f.text_area :description, class: 'form-control form-margin form-width', rows: 3 %>
+							<%= f.text_area :description, placeholder: "What's your event about?", class: 'form-control form-margin form-width', rows: 3 %>
 						</div>	
 						<div class="center-block">						
 							<h1 class="input-title text-center">
 								Location
 							</h1>
-							<%= f.text_field :location, class: 'form-control form-margin form-width' %>
+							<%= f.text_field :location, placeholder: 'Enter a Location', class: 'form-control form-margin form-width' %>
 						</div>
 					</div>
 				</div>
@@ -67,14 +65,16 @@
 						<h1 class="form_row_title">
 							Potential Times
 						</h1>
-
-						<button class='btn btn-default center-block add-button'>
-							<%= link_to_add_association 'Add A Time', f, :timeslots %>
-						</button>
-
+						
+						<div class="timeslot-js-trig">
 						<%= f.fields_for :timeslots do |timeslot| %>
 								<%= render "timeslot_fields", :f => timeslot %>
 						<% end %>
+						</div>
+						<button class='btn btn-default center-block time-button'>
+							<%= link_to_add_association 'Add A Time', f, :timeslots %>
+						</button>
+
 					</div>
 
 				</div>
@@ -83,12 +83,15 @@
 						<h1 class="form_row_title">
 							Attendees
 						</h1>
+	
+						
 
 						<div class="attendee_form">
 							<%= f.fields_for :attendees do |attendee| %>
 								<%= render "attendee_fields", :f => attendee %>
 							<% end %>
 						</div>
+
 
 						<button class='btn btn-default center-block add-button'>
 							<%= link_to_add_association 'Add Another Attendee', f, :attendees %>

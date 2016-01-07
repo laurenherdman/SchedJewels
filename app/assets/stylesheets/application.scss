@@ -29,6 +29,13 @@ body {
   margin-bottom: 0;
 }
 
+.navbar-default {
+  background-image: image-url('header.png');
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
 @media (min-width: 768px)
 {
     .navbar-header
@@ -56,6 +63,18 @@ body {
 @media (max-width: 550px) {
   .navbar-brand {
     font-size: 1em;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-brand {
+    font-size: .85em;
+  }
+}
+
+@media (max-width: 315px) {
+  .navbar-brand {
+    font-size: .6em;
   }
 }
 .event_page_header {
