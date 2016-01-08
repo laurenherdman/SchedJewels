@@ -1,2 +1,31 @@
-<h1>Items#new</h1>
+<div class="row no-margin no-padding">
+	<div class="col-md-3 fixed" id="sidebar">
+		<div class="user_holder">
+			<p id="user_name"> <% if current_user %>
+  			<%= current_user.name %>
+		 <% end %> </p>
+			<div id="img_holder">
+				<img id="user_image" src="https://placehold.it/100x100">
+			</div>
+		</div>
+		<div class="sidebar_option">
+			<a href="/events" class="option_text" id="toption">My Calendar</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/proposals/new' class="option_text" id="toption">Create An Event</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/proposals' class="option_text" id="toption">View Events</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/groups' class="option_text" id="toption">Partner/Group</a>
+		</div>
+		<div class="sidebar_option">
+			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
+		</div>
+	</div>
+	<div class="col-md-3 no-padding">
+	</div>
+
+	<h1>Items#new</h1>
 <p>Find me in app/views/items/new.html.erb</p>

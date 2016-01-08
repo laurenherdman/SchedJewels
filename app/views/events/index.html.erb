@@ -1,5 +1,4 @@
-<div class="row no-margin" >
-
+<div class="row no-margin no-padding">
 	<div class="col-md-3 fixed" id="sidebar">
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
@@ -25,10 +24,10 @@
 			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
 		</div>
 	</div>
-	<div class="col-md-3 spacer">
+	<div class="col-md-3 no-padding">
 	</div>
 
-<div class="col-xs-9 calendar_body">
+<div class="col-md-9 calendar_body no-padding">
 	<h1 class="event_page_header"> <%= current_user.name %>'s Calendar</h1>
 	<div class="simple_calendar">
 		<%= month_calendar(attribute: :start_date_time, events: @events) do |date, events| %>

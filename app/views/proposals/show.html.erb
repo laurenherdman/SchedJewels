@@ -1,4 +1,4 @@
-<div class="row no-margin">
+<div class="row no-margin no-padding">
 	<div class="col-md-3 fixed" id="sidebar">
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
@@ -24,9 +24,10 @@
 			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
 		</div>
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-3 no-padding">
 	</div>
 
+<<<<<<< HEAD
 	<div class="col-md-9" id="proposal_holder">
 		<h1 class="page_header"> Details for <%= @proposal.title.capitalize %></h1>
 	<div class="prop-holder">
@@ -38,6 +39,22 @@
 				<% @proposal.timeslots.each do |t| %>
 					<div class="a_timeslot">
 						<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
+=======
+	<div class="col-md-9 no-padding" id="proposal_holder">
+
+		<h1 class="page_header"> Details for <%= @proposal.title %></h1>
+
+		<div class="proposal_info">
+			<h1 class="prop_title prop"><%= @proposal.title %></h1>
+			<div class="prop_location prop"><span class="where-what">Description:</span> <%= @proposal.description %> </div>
+			<div class="prop_description prop"><span class="where-what">Where:</span> <%= @proposal.location %> </div>
+		</div>
+
+		<div>
+			<% @proposal.timeslots.each do |t| %>
+				<div class="a_proposal">
+					<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
+>>>>>>> view-events
 
 							<% if Vote.where("user_id = ? AND timeslot_id = ?", current_user.id, t.id) != [] %>
 								<p class="text-center"> You've voted for this time </p>
@@ -50,14 +67,25 @@
 					</div>
 				<% end %>
 
+<<<<<<< HEAD
 				<% if current_user.id == @proposal.owner_id %>
 					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
 				<% else %>
 				<% end %>
 			</div>
+=======
+			<% if current_user.id == @proposal.owner_id %>
+				<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
+			<% else %>
+			<% end %>
+
+		</div>
+
+>>>>>>> view-events
 
 		<hr class="prop-divider">
 
+<<<<<<< HEAD
 			<div class="comment-container center-block">
 				<h3 class="text-center">Comments:</h1>
 								<ul class="comment-list center-block">
@@ -69,6 +97,19 @@
 						</ul>
 					<%= render partial: 'comments/comment_form' %>
 			</div>
+=======
+		<div class="comment-pad">
+			<h1 class="chat-box">Chat:</h1>
+							<ul class="comment-list">
+								<li><% @proposal.comments.each do |comment| %>
+								<p><span class="comment-name"><%= comment.user.name %> says:</span> <%= comment.body_text %></p></li>
+						<% end %>
+					</ul>
+		</div>
+		<div class="comment-pad">
+				<%= render partial: 'comments/comment_form' %>
+		</div>
+>>>>>>> view-events
 	</div>
 </div>
 </div>

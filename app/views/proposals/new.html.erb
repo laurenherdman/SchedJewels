@@ -1,5 +1,4 @@
-<div class="row no-margin" >
-	
+<div class="row no-margin no-padding">
 	<div class="col-md-3 fixed" id="sidebar">
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
@@ -25,32 +24,32 @@
 			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
 		</div>
 	</div>
-	<div class="col-md-3 spacer">
+	<div class="col-md-3 no-padding">
 	</div>
 
-	<div class="col-md-9" id="proposal_holder">
+	<div class="col-md-9 no-padding" id="proposal_holder">
 		<h1 class="page_header">Create An Event </h1>
 		<div class="spacer"></div>
-			<div class="row">
+			<div class="row section-spacing">
 			<%= form_for @proposal do |f| %>
 				<div class="col-md-4">
 					<div class="form-block">
 						<h1 class="form_row_title">
 							Event Description
 						</h1>
-						<div class="center-block">						
+						<div class="center-block">
 							<h1 class="input-title text-center">
 								Title
 							</h1>
-							<%= f.text_field :title, placeholder: 'E.g, "Morning Lecutre"', class: 'form-control form-margin form-width' %>
+							<%= f.text_field :title, placeholder: 'E.g, "Morning Lecture"', class: 'form-control form-margin form-width' %>
 						</div>
 						<div class="center-block">
 							<h1 class="input-title text-center">
 								Description
 							</h1>
 							<%= f.text_area :description, placeholder: "What's your event about?", class: 'form-control form-margin form-width', rows: 3 %>
-						</div>	
-						<div class="center-block">						
+						</div>
+						<div class="center-block">
 							<h1 class="input-title text-center">
 								Location
 							</h1>
@@ -63,7 +62,7 @@
 						<h1 class="form_row_title">
 							Potential Times
 						</h1>
-						
+
 						<div class="timeslot-js-trig">
 						<%= f.fields_for :timeslots do |timeslot| %>
 								<%= render "timeslot_fields", :f => timeslot %>
@@ -81,8 +80,8 @@
 						<h1 class="form_row_title">
 							Attendees
 						</h1>
-	
-						
+
+
 
 						<div class="attendee_form">
 							<%= f.fields_for :attendees do |attendee| %>
