@@ -349,8 +349,20 @@ a:hover, a:visited, a:link, a:active {
 	line-height: 5vh;
 }
 
+// Terms //
 
+.terms-layout {
+	padding-left: 5em;
+	padding-right: 5em;
+	padding-bottom: 5em;
+}
 
+.terms-logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+ }
 
-
-
+.terms-layout h5 {
+	padding-top: 1em;
+}
