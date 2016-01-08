@@ -377,13 +377,21 @@ body {
 	background-color: #F1F1F1;
 }
 
-.a_proposal {
+.timeslot-container {
+	margin-top: 10vh;
+}
+
+.a_timeslot {
 	margin-top: 3vh;
 	padding: 2.5vh;
-	width: 70%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid grey;
+	background-image: image-url('background.png');
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 }
 
 .proposal_info {
@@ -419,29 +427,34 @@ body {
 	}
 }
 
-.prop {
-	margin: 0;
-	margin-left: auto;
-	margin-right: auto;
+
+.prop-holder {
+	min-height: 80vh;
+	background-image: image-url('background.png');
+	border-radius: 10px;
+	padding: 2vw;
+	padding-top: 3vh;
 }
 
 .prop_title {
 	padding: 2vh;
-	font-size: 3em;
 	text-align: center;
 	background-color: #444444;
 }
 
-.prop_description {
-	font-size: 2em;
-	text-align: center;
-	background-color: #666666;
+.prop-divider {
+	width: 80%;
+	border-color: rgba(0,0,0,0.1);
 }
 
 .prop_location {
 	font-size: 2em;
 	text-align: center;
-	background-color: #888888;
+}
+
+.prop_description {
+	font-size: 1.5em;
+	text-align: center;
 }
 
 .potential_timeslots {
@@ -471,6 +484,15 @@ body {
 	margin: 0;
 }
 
+.comment-container {
+	min-height: 50vh;
+	width: 60%;
+
+	li {
+		width: 80%;
+	}
+}
+
 .text-box {
 	width: 40em;
 	height: 5em;
@@ -478,7 +500,27 @@ body {
 
 .comment-name {
 	font-weight: bold;
-	color: #006699;
+	color: #F9F9F9;
+}
+
+.comment-text {
+	color: #F8F8F8;
+}
+
+.comment-divider {
+	width: 80%;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	border-color: rgba(0,0,0,0.1);
+}
+
+.comment-box {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(0,0,0,0.5);
+	border-color: transparent;
+	color: #F8F8F8;
 }
 
 .comment-list {
