@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
   	@group.owner_id = current_user.id
 
   	if @group.save
-  		redirect_to groups_url
+  		redirect_to group_url(@group)
   	else
   		render :new
   	end
