@@ -35,6 +35,9 @@ body {
 	margin-right: 2.5%;
 	background-image: image-url('background.png');
 	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 }
 
 @media (max-width: 768px) {
@@ -123,7 +126,7 @@ body {
 }
 
 #user_name {
-	margin-top: 6vh;
+	margin-top: 10vh;
 	display: inline-block;
 	width: 60%;
 	text-align: center;
@@ -135,7 +138,7 @@ body {
 }
 
 #user_image {
-	margin-top: 3vh;
+	margin-top: 5vh;
 	height: auto;
 	width: 8vw;
 	border-radius: 8vw;
