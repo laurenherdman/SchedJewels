@@ -1,9 +1,9 @@
-<div class="row no-margin">
+<div class="row no-margin no-padding">
 	<div class="col-md-3 fixed" id="sidebar">
 		<div class="user_holder">
-				<p id="user_name"> <% if current_user %>
+			<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
-		 		<% end %> </p>
+		 <% end %> </p>
 			<div id="img_holder">
 				<img id="user_image" src="https://placehold.it/100x100">
 			</div>
@@ -12,20 +12,23 @@
 			<a href="/events" class="option_text" id="toption">My Calendar</a>
 		</div>
 		<div class="sidebar_option">
-			<a href='/proposals/new' class="option_text">Create An Event</a>
+			<a href='/proposals/new' class="option_text" id="toption">Create An Event</a>
 		</div>
 		<div class="sidebar_option">
-			<a href='/proposals' class="option_text">View Events</a>
+			<a href='/proposals' class="option_text" id="toption">View Events</a>
 		</div>
 		<div class="sidebar_option">
-			<a href='/groups' class="option_text">Partner/Group</a>
+			<a href='/groups' class="option_text" id="toption">Partner/Group</a>
 		</div>
 		<div class="sidebar_option">
 			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
 		</div>
 	</div>
-	<div class="col-md-3 spacer"></div>
-	<div class="col-md-9" id="proposal_holder">
+	<div class="col-md-3 no-padding">
+	</div>
+
+
+	<div class="col-md-9 no-padding" id="proposal_holder">
 	<h1 class="page_header"> My Events </h1>
 	<div class="spacer"></div>
 		<% @proposals.each do |p| %>
@@ -39,7 +42,7 @@
 							<p class="p_location"> <%= p.location %> </p>
 						</div>
 					</div>
-					
+
 				<% end %>
 			<% end %>
 		<% end %>
