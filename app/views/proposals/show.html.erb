@@ -27,67 +27,42 @@
 	<div class="col-md-3 no-padding">
 	</div>
 
-<<<<<<< HEAD
-	<div class="col-md-9" id="proposal_holder">
-		<h1 class="page_header"> Details for <%= @proposal.title.capitalize %></h1>
-	<div class="prop-holder">
-			<h1 class="prop_location"> <%= @proposal.location %> </h1>
-			<hr class="prop-divider">
-			<h3 class="prop_description"> <%= @proposal.description %> </h1>
-		
-			<div class="timeslot-container">
-				<% @proposal.timeslots.each do |t| %>
-					<div class="a_timeslot">
-						<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
-=======
 	<div class="col-md-9 no-padding" id="proposal_holder">
 
 		<h1 class="page_header"> Details for <%= @proposal.title %></h1>
 
 		<div class="proposal_info">
 			<h1 class="prop_title prop"><%= @proposal.title %></h1>
-			<div class="prop_location prop"><span class="where-what">Description:</span> <%= @proposal.description %> </div>
-			<div class="prop_description prop"><span class="where-what">Where:</span> <%= @proposal.location %> </div>
+			<div class="prop_description prop"><span class="where-what">Description:</span> <%= @proposal.description %> </div>
+			<div class="prop_location prop"><span class="where-what">Where:</span> <%= @proposal.location %> </div>
 		</div>
 
 		<div>
 			<% @proposal.timeslots.each do |t| %>
 				<div class="a_proposal">
-					<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
->>>>>>> view-events
+					<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p")%>
 
 							<% if Vote.where("user_id = ? AND timeslot_id = ?", current_user.id, t.id) != [] %>
 								<p class="text-center"> You've voted for this time </p>
 							<% else %>
-								<%= form_for [@proposal, t, Vote.new], remote: true do |f| %>								
+								<%= form_for [@proposal, t, Vote.new], remote: true do |f| %>
 									<%= f.submit "Vote" %>
 								<% end %>
-								
+
 							<% end %>
 					</div>
 				<% end %>
 
-<<<<<<< HEAD
 				<% if current_user.id == @proposal.owner_id %>
 					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
 				<% else %>
 				<% end %>
 			</div>
-=======
-			<% if current_user.id == @proposal.owner_id %>
-				<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create %>
-			<% else %>
-			<% end %>
-
-		</div>
-
->>>>>>> view-events
 
 		<hr class="prop-divider">
 
-<<<<<<< HEAD
 			<div class="comment-container center-block">
-				<h3 class="text-center">Comments:</h1>
+				<h3 class="text-center chat-box">Chat:</h1>
 								<ul class="comment-list center-block">
 									<hr class="comment-divider">
 									<% @proposal.comments.each do |comment| %>
@@ -97,19 +72,6 @@
 						</ul>
 					<%= render partial: 'comments/comment_form' %>
 			</div>
-=======
-		<div class="comment-pad">
-			<h1 class="chat-box">Chat:</h1>
-							<ul class="comment-list">
-								<li><% @proposal.comments.each do |comment| %>
-								<p><span class="comment-name"><%= comment.user.name %> says:</span> <%= comment.body_text %></p></li>
-						<% end %>
-					</ul>
-		</div>
-		<div class="comment-pad">
-				<%= render partial: 'comments/comment_form' %>
-		</div>
->>>>>>> view-events
 	</div>
 </div>
 </div>
