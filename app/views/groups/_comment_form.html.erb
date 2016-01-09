@@ -1,11 +1,10 @@
-<div class="col-md-9" id="proposal_holder">
+<div>
 	<% if current_user %>
 
 		<%= form_for [@group, @comment]  do |f| %>
 
-		  <div class="comment-box">
-		    <p><%= f.label :comment, "Add A Comment:" %></p>
-		    <p><%= f.text_area :body_text, :class => 'text-box' %></p>
+		  <div class="center-block text-center">
+		    <p><%= f.text_area :body_text, class: 'form-control comment-box center-block', rows: 2 %></p>
 		    <%= f.submit "Comment", :class => 'comment-button' %>
 		  </div>
 

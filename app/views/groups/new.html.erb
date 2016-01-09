@@ -1,5 +1,4 @@
-<div class="row no-margin" >
-
+<div class="row no-margin no-padding">
 	<div class="col-md-3 fixed" id="sidebar">
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
@@ -22,14 +21,14 @@
 			<a href='/groups' class="option_text" id="toption">Partner/Group</a>
 		</div>
 		<div class="sidebar_option">
-			<p class="option_text">
-			<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-			</p>
+			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
 		</div>
 	</div>
-	<div class="col-md-3 spacer">
+	<div class="col-md-3 no-padding">
 	</div>
 
-<div class="col-md-9" id="proposal_holder">
+	<div class="col-md-9 no-padding" id="proposal_holder">
+		<h1 class="page_header">
+
 	<%= render "form" %>
 </div>
