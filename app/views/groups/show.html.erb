@@ -33,7 +33,7 @@
 			<div class="row section-spacing">
 				<% @group.lists.each do |l| %>
 				<ul>
-				<li><%= link_to l.name, group_lists_path(:group_id) %></li>
+				<li><%= link_to l.name, "../groups/#{@group.id}/lists/#{l.id}" %></li>
 				</ul>
 			<% end %>
 
