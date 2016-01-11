@@ -76,8 +76,8 @@ class Event < ActiveRecord::Base
       :body_object => {'summary' => self.title,
                        'description' => self.proposal.description,
                        'location' => self.proposal.location,
-                       'start' => { 'dateTime' => self.start_date_time}.include?("dateTime"),
-                       'end' => { 'dateTime' => self.end_date_time}.include?("dateTime"),
+                       'start' => { 'dateTime' => self.start_date_time},
+                       'end' => { 'dateTime' => self.end_date_time},
                        'attendees' => self.proposal.attendee_array,
                        'sendNotifications' => 'true',
                        'reminders' => {
@@ -91,8 +91,8 @@ class Event < ActiveRecord::Base
 
       :headers => {'Content-Type' => 'application/json'})
     googleeventid = JSON.load(@result.response.body)["id"]
-    binding.pry
     self.update_attribute("google_event_id", googleeventid)
+    binding.pry
   end
 
   def self.show_calendar(user)
