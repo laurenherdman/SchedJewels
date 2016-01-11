@@ -26,7 +26,7 @@
 
 	<div class="col-md-9 no-padding" id="proposal_holder">
 		<h1 class="page_header">  <%= current_user.name %>'s Calendar</h1>
-	<div class="simple_calendar">
+	<div class="simple_calendar cal-background">
 		<%= month_calendar(attribute: :start_date_time, events: @events) do |date, events| %>
 	  	<%= date.strftime("%e") %>
 		  	<% events.each do |event| %>
