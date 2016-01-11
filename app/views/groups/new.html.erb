@@ -5,7 +5,6 @@
   			<%= current_user.name %>
 		 <% end %> </p>
 			<div id="img_holder">
-				<img id="user_image" src="https://placehold.it/100x100">
 			</div>
 		</div>
 		<div class="sidebar_option">
@@ -28,7 +27,9 @@
 	</div>
 
 	<div class="col-md-9 no-padding" id="proposal_holder">
-		<h1 class="page_header">
+		<h1 class="page_header">Create A Group</h1>
 
-	<%= render "form" %>
+	<div class="section-spacing">
+		<%= render "form" %>
+	</div>
 </div>

@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
 	belongs_to :group
-	has_many :lists
+	belongs_to :lists
 	has_many :users, through: :lists
 	belongs_to :user
 end

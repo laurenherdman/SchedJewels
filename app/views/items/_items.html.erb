@@ -1,0 +1,15 @@
+<div>
+	<h3>Add An Item</h3>
+
+	<%= form_for [@group, @list, @item] do |f| %>
+		<div>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+
+	    <%= f.hidden_field :list_id %>
+
+	    <%= f.submit "Add Item" %>
+    </div>
+	<% end %>
+
+</div>

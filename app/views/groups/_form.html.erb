@@ -1,8 +1,5 @@
-<div class="col-md-9" id="proposal_holder">
-  <h2>Create A Group</h2>
+<div>
   	<%= form_for @group do |f|%>
-
-
     <br>
 
   	<div>
@@ -10,6 +7,9 @@
       <%= f.text_field :title %>
   	</div>
 
-      <%= f.submit "Create Your Group" %>
+		<div class="row submit_row">
+			<%= f.submit 'Create Group', class: 'btn btn-xl center-block' %>
+			</div>
     <%end%>
 </div>
+

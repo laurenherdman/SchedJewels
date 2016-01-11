@@ -19,7 +19,14 @@ class ListsController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:group_id])
     @list = List.find(params[:id])
+    @item = Item.new
+  end
+
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
   end
 
 private

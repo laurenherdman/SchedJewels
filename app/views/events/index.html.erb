@@ -4,9 +4,6 @@
 			<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
 		 <% end %> </p>
-			<div id="img_holder">
-				<img id="user_image" src="https://placehold.it/100x100">
-			</div>
 		</div>
 		<div class="sidebar_option">
 			<a href="/events" class="option_text" id="toption">My Calendar</a>
@@ -27,9 +24,9 @@
 	<div class="col-md-3 no-padding">
 	</div>
 
-<div class="col-md-9 calendar_body no-padding">
-	<h1 class="event_page_header"> <%= current_user.name %>'s Calendar</h1>
-	<div class="simple_calendar">
+	<div class="col-md-9 no-padding" id="proposal_holder">
+		<h1 class="page_header">  <%= current_user.name %>'s Calendar</h1>
+	<div class="simple_calendar cal-background">
 		<%= month_calendar(attribute: :start_date_time, events: @events) do |date, events| %>
 	  	<%= date.strftime("%e") %>
 		  	<% events.each do |event| %>
