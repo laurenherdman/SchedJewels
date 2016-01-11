@@ -98,7 +98,7 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: white;
+  color: white;
 }
 
 
@@ -154,8 +154,10 @@ body {
   }
 
   .day {
-    height: 80px;
+    height: 5em;
     text-align: right;
+    background-color: #bdbebe;
+    color: #257272;
   }
 
   .wday-0 {}
@@ -167,7 +169,8 @@ body {
   .wday-6 {}
 
   .today {
-    background: #FFFFC0
+    background: #3fc0c0;
+    color: white !important;
   }
 
   .past {}
@@ -181,7 +184,9 @@ body {
   .next-month {
     background: #DDD;
   }
-  .current-month {}
+  .current-month {
+
+  }
 
   .has-events {}
 }
