@@ -12,7 +12,6 @@ class EventsController < ApplicationController
       @event.title = @timeslot.proposal.title
       @event.user = current_user
 
-
       if @timeslot.proposal.save && @event.save
           redirect_to proposal_path(@timeslot.proposal)
       else
@@ -86,6 +85,6 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:title, :description, :location, :start_time, :end_time)
+      params.require(:event).permit(:title, :description, :location, :start_date_time, :end_date_time)
     end
 end

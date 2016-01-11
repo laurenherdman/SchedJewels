@@ -36,7 +36,6 @@ class Proposal < ActiveRecord::Base
     self.attendees.each do |a|
     	attend_array << { "email" => a.email_address }
     end
-    puts attend_array
     self.save
     return attend_array
   end
