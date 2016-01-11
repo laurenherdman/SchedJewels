@@ -1,9 +1,30 @@
 $(document).on('ready page:load', function() {
-	var timeslotNumber = 0
-	$('.vote-submit').on('click', function() { $(this).hide() } );
+
+	$('.start-hidden').hide();
+
+	$('.vote-form').on('click', function() { 
+
+		var function_One = function() {
+			 var r = $.Deferred();
+
+			$('.vote-form').fadeOut()
+
+			return r
+		}
+
+		var function_Two = function() {
+		 	$('.start-hidden').delay(100).fadeIn();
+		};
+
+		function_One().done( function_Two() );
+
+	});
+
+
 	$('.time-button').on('click', function() { 
 		$(this).css('margin-top', '4vh');
 	} );
+
 	$('#add-attendee-js').click();
 	$('#add-time-js').click();
 

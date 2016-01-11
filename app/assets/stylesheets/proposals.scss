@@ -410,6 +410,7 @@ body {
 .a_timeslot {
 	margin-top: 3vh;
 	padding: 2.5vh;
+	height: 18vh;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
@@ -443,6 +444,26 @@ body {
 		font-size: 1.5em;
 	}
 }
+
+.vote-form {
+	&:click {
+		width: 0;
+		transition: .5s;
+	}
+}
+
+.voted, .just-voted {
+	height: 5vh;
+	width: 15vh;
+	background-color: white;
+	color: black;
+	line-height: 5vh;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+
 
 .button_to {
 	width: 15vw;

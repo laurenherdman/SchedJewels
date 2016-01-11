@@ -37,12 +37,12 @@
 						<p class="prop_date"><%= t.start_date.strftime("%b. %d, %Y") %>, <%= t.start_time.strftime("%I:%M %p") %>-<%= t.end_time.strftime("%I:%M %p")  %></p>
 
 							<% if Vote.where("user_id = ? AND timeslot_id = ?", current_user.id, t.id) != [] %>
-								<p class="text-center"> You've voted for this time </p>
+								<p class="voted"> Voted </p>
 							<% else %>
 								<%= form_for [@proposal, t, Vote.new], remote: true do |f| %>
-									<%= f.submit "Vote" %>
+									<%= f.submit "Vote", class: 'vote-form' %>
 								<% end %>
-
+								<p class="voted start-hidden"> Voted </p>
 							<% end %>
 					</div>
 				<% end %>
