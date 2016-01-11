@@ -30,13 +30,28 @@ class Proposal < ActiveRecord::Base
 		self.save
 	end
 
+	def start_date_time_proposal
+		sd = self.start_date
+    st = self.start_time.in_time_zone('Islamabad')
+
+
+    sdt = DateTime.new(sd.year, sd.month, sd.day, st.hour, st.min)
+	end
+
+	def end_date_time_proposal
+		ed = self.end_date
+    et = self.end_time.in_time_zone('Islamabad')
+
+
+    edt = DateTime.new(ed.year, ed.month, ed.day, et.hour, et.min)
+	end
+
 
 	def attendee_array
     attend_array = []
     self.attendees.each do |a|
     	attend_array << { "email" => a.email_address }
     end
-    puts attend_array
     self.save
     return attend_array
   end

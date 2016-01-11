@@ -36,6 +36,7 @@ gem 'better_errors'
 gem 'simple_calendar'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
+gem 'pry-nav'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

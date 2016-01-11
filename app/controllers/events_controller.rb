@@ -11,7 +11,10 @@ class EventsController < ApplicationController
       @timeslot.proposal.event = @event
       @event.title = @timeslot.proposal.title
       @event.user = current_user
-
+      @event.location = @timeslot.proposal.location
+      @event.description = @timeslot.proposal.description
+      @event.start_date_time = @timeslot.proposal.start_date_time_proposal
+      @event.end_date_time = @timeslot.proposal.end_date_time_proposal
 
       if @timeslot.proposal.save && @event.save
           redirect_to proposal_path(@timeslot.proposal)
@@ -86,6 +89,6 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:title, :description, :location, :start_time, :end_time)
+      params.require(:event).permit(:title, :description, :location, :start_date_time, :end_date_time)
     end
 end
