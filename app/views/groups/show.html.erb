@@ -5,7 +5,6 @@
   			<%= current_user.name %>
 		 <% end %> </p>
 			<div id="img_holder">
-				<img id="user_image" src="https://placehold.it/100x100">
 			</div>
 		</div>
 		<div class="sidebar_option">
@@ -31,11 +30,11 @@
 		<h1 class="page_header"><%= @group.title %></h1>
 		<div class="spacer"></div>
 			<div class="row section-spacing">
-				<% @group.lists.each do |l| %>
 				<ul>
+				<% @group.lists.each do |l| %>
 				<li><%= link_to l.name, "../groups/#{@group.id}/lists/#{l.id}" %></li>
-				</ul>
 			<% end %>
+			</ul>
 
 			<%= render :partial => '/lists/lists' %>
 

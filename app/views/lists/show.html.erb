@@ -1,1 +1,30 @@
-<%= render "lists" %>
+<div class="row no-margin no-padding">
+	<div class="col-md-3 fixed" id="sidebar">
+		<div class="user_holder">
+			<p id="user_name"> <% if current_user %>
+  			<%= current_user.name %>
+		 <% end %> </p>
+		</div>
+		<div class="sidebar_option">
+			<a href="/events" class="option_text" id="toption">My Calendar</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/proposals/new' class="option_text" id="toption">Create An Event</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/proposals' class="option_text" id="toption">View Events</a>
+		</div>
+		<div class="sidebar_option">
+			<a href='/groups' class="option_text" id="toption">Partner/Group</a>
+		</div>
+		<div class="sidebar_option">
+			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
+		</div>
+	</div>
+	<div class="col-md-3 no-padding">
+	</div>
+
+	<div class="col-md-9 no-padding" id="proposal_holder">
+		<h1 class="page_header"> <%= @list.name %></h1>
+
+	<%= render :partial => '/items/items' %>
