@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-	background-color: #F1F1F1
+	background-color: #242424;
 }
 
 // Proposal Index //
@@ -33,12 +33,19 @@ body {
 	float: left;
 	margin-left: 2.5%;
 	margin-right: 2.5%;
-	background-image: image-url('background.png');
-	border-radius: 5px;
+	background-color: #FF9940;
 	-webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+	transition: .8s;
+
+	&:hover {
+		transition: .3s;
+		transform: scale(.98);
+	}
 }
+
+
 
 .no-padding {
 	padding-left: 0;
@@ -117,7 +124,7 @@ body {
 
 #sidebar {
 	min-height: 100vh;
-	background-image: image-url('background.png');
+	background-color: black;
 	padding: 0;
 }
 
@@ -132,12 +139,15 @@ body {
 }
 
 .user_holder {
-	display: flex;
+	padding-top: 2vh;
+	height: 10vh;
+	margin-bottom: 13vh;
 }
 
 #user_name {
-	margin-top: 10vh;
+	line-height: 10vh;
 	display: inline-block;
+	color: white;
 	width: 60%;
 	text-align: center;
 	font-size: 1.8em;
@@ -165,7 +175,13 @@ body {
 	color: white;
 	text-align: center;
 	border-top: 3vh;
-	background-color: rgba(63, 191, 191, 0.6)
+	background-color: rgba(63, 191, 191, 0.6);
+	transition: .8s;
+
+	&:hover {
+		transition: .3s;
+		transform: scale(.95);
+	}
 }
 
 .option_text {
@@ -206,7 +222,7 @@ body {
 	font-size: 4em;
 	height: 15vh;
 	text-align: center;
-	background-image: image-url('header.png');
+	background-color: #141414;
 	margin-top: 0;
 	margin-left: 0;
 	margin-right: 0;
@@ -230,7 +246,6 @@ body {
 
 }
 .form-block {
-	border-radius: 10px;
 	background-color: rgba(0,0,0,0.2);
 	min-height: 70vh;
 	color: white;
@@ -385,6 +400,7 @@ body {
 
 #proposal_show_container {
 	background-color: #F1F1F1;
+	color: white;
 }
 
 .timeslot-container {
@@ -397,11 +413,17 @@ body {
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	background-image: image-url('background.png');
+	background-color: rgba(63, 191, 191, 1);
 	border-radius: 5px;
 	-webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+	transition: .3s;
+
+	&:hover {
+		transition: .8s;
+		transform: scale(1.05);
+	}
 }
 
 .proposal_info {
@@ -440,10 +462,11 @@ body {
 
 .prop-holder {
 	min-height: 80vh;
-	background-image: image-url('background.png');
+	background-color: #343434;
 	border-radius: 10px;
 	padding: 2vw;
 	padding-top: 3vh;
+	color: white;
 }
 
 .prop_title {
