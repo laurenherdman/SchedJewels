@@ -3,20 +3,12 @@ $(document).on('ready page:load', function() {
 	$('.start-hidden').hide();
 
 	$('.vote-form').on('click', function() { 
+		var self = $(this),
+			votedButton = self.next('.start-hidden');
 
-		var function_One = function() {
-			 var r = $.Deferred();
-
-			$('.vote-form').fadeOut()
-
-			return r
-		}
-
-		var function_Two = function() {
-		 	$('.start-hidden').delay(100).fadeIn();
-		};
-
-		function_One().done( function_Two() );
+		$(this).fadeOut(400, function() {
+		 	votedButton.delay(500).fadeIn();
+		});
 
 	});
 
@@ -26,9 +18,14 @@ $(document).on('ready page:load', function() {
 	} );
 
 	$('#add-attendee-js').click();
+	$('#add-attendee-js').click();
+	$('#add-attendee-js').click();
+
+
+	$('#add-time-js').click();
 	$('#add-time-js').click();
 
 	$('.all-proposals').hide().fadeIn(1000);
 	$('.form-block').hide().fadeIn(1000);
-
+	$('.prop-holder').hide().fadeIn(1000);
 });

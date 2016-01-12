@@ -15,7 +15,7 @@
 			<a href='/proposals' class="option_text" id="toption">View Events</a>
 		</div>
 		<div class="sidebar_option">
-			<a href='/groups' class="option_text" id="toption">Partner/Group</a>
+			<a href='/groups' class="option_text" id="toption">Settings</a>
 		</div>
 		<div class="sidebar_option">
 			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
@@ -25,11 +25,12 @@
 	</div>
 
 	<div class="col-md-9 no-padding" id="proposal_holder">
-		<h1 class="page_header"> Details for <%= @proposal.title.capitalize %></h1>
+		<h1 class="page_header ease-fast"> Details for <%= @proposal.title.capitalize %></h1>
 	<div class="prop-holder section-spacing">
-			<h1 class="prop_location"> <%= @proposal.location %> </h1>
+			<h1 class="prop_location">Location: <%= @proposal.location %> </h1>
 			<hr class="prop-divider">
-			<h3 class="prop_description"> <%= @proposal.description %> </h1>
+			<h3 class="prop_description">About: <%= @proposal.description %> </h1>
+			<hr class="prop-divider">
 
 			<div class="timeslot-container">
 				<% @proposal.timeslots.each do |t| %>
@@ -40,9 +41,10 @@
 								<p class="voted"> Voted </p>
 							<% else %>
 								<%= form_for [@proposal, t, Vote.new], remote: true do |f| %>
-									<%= f.submit "Vote", class: 'vote-form' %>
+									<%= f.submit "Vote", class: 'btn btn-default center-block vote-form' %>
+										<p class="voted start-hidden "> Voted </p>	
 								<% end %>
-								<p class="voted start-hidden"> Voted </p>
+
 							<% end %>
 					</div>
 				<% end %>
