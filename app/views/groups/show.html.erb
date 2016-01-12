@@ -31,7 +31,10 @@
 		<div class="spacer"></div>
 			<div class="row section-spacing">
 				<% @group.lists.each do |l| %>
-				<p class="all-proposals proposal"><%= link_to l.name, "../groups/#{@group.id}/lists/#{l.id}", class: "p_title" %></p>
+					<% if l.id == nil %>
+					<% else %>
+						<p class="all-proposals proposal"><%= link_to l.name, "../groups/#{@group.id}/lists/#{l.id}", class: "p_title" %></p>
+					<% end %>
 			<% end %>
 
 

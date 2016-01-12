@@ -50,7 +50,7 @@
 				<% end %>
 
 				<% if current_user.id == @proposal.owner_id %>
-					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create, class: "btn btn-xl center-block" %>
+					<%= button_to "Create Event", events_path(:timeslot => @proposal.winning_timeslot), :method => :create, class: "btn btn-xl center-block prop-center" %>
 				<% else %>
 				<% end %>
 			</div>

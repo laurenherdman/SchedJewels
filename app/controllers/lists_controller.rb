@@ -2,9 +2,10 @@ class ListsController < ApplicationController
   def create
   	@list = List.new(list_params)
   	@list.user = current_user
+    @group = @list.group
 
   	if @list.save
-  		redirect_to group_lists_path(@list)
+  		redirect_to group_list_path(@group, @list)
   	else
   		redirect_to group_path(@list.group), notice: "There was an error."
   	end
