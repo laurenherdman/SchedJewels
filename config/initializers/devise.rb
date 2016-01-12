@@ -3,7 +3,7 @@
 Devise.setup do |config|
   require 'omniauth-google-oauth2'
 
-  config.omniauth :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET'], { access_type: "offline", approval_prompt: "", scope: 'userinfo.email, userinfo.profile,calendar', skip_jwt: true }
+  config.omniauth :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET'], { access_type: "offline", prompt: "consent", approval_prompt: "", scope: 'userinfo.email, userinfo.profile,calendar', skip_jwt: true }
   config.mailer_sender = 'schedjewelsapp@gmail.com'
 
   # Configure the class responsible to send e-mails.
