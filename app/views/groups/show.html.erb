@@ -17,7 +17,7 @@
 			<a href='/proposals' class="option_text" id="toption">View Events</a>
 		</div>
 		<div class="sidebar_option">
-			<a href='/groups' class="option_text" id="toption">Partner/Group</a>
+			<a href='/groups' class="option_text" id="toption">Groups</a>
 		</div>
 		<div class="sidebar_option">
 			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
@@ -31,7 +31,7 @@
 		<div class="spacer"></div>
 			<div class="row section-spacing">
 				<% @group.lists.each do |l| %>
-				<p class="all-proposals proposal">><%= link_to l.name, "../groups/#{@group.id}/lists/#{l.id}", class: "p_title" %></p>
+				<p class="all-proposals proposal"><%= link_to l.name, "../groups/#{@group.id}/lists/#{l.id}", class: "p_title" %></p>
 			<% end %>
 
 

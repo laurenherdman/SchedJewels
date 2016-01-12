@@ -15,7 +15,7 @@
 			<a href='/proposals' class="option_text" id="toption">View Events</a>
 		</div>
 		<div class="sidebar_option">
-			<a href='/groups' class="option_text" id="toption">Settings</a>
+			<a href='/groups' class="option_text" id="toption">Groups</a>
 		</div>
 		<div class="sidebar_option">
 			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "option_text" %>
@@ -42,7 +42,7 @@
 							<% else %>
 								<%= form_for [@proposal, t, Vote.new], remote: true do |f| %>
 									<%= f.submit "Vote", class: 'btn btn-default center-block vote-form' %>
-										<p class="voted start-hidden "> Voted </p>	
+										<p class="voted start-hidden "> Voted </p>
 								<% end %>
 
 							<% end %>
