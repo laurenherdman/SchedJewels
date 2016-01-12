@@ -2,7 +2,7 @@
 	<div class="col-md-3 fixed" id="sidebar">
 		<div class="user_holder">
 			<p id="user_name"> <% if current_user %>
-  			<%= current_user.name %>
+  			<%= current_user.name.split(" ")[0] %>
 		 <% end %> </p>
 		</div>
 		<div class="sidebar_option">
@@ -25,7 +25,7 @@
 	</div>
 
 	<div class="col-md-9 no-padding" id="proposal_holder">
-		<h1 class="page_header">  <%= current_user.name %>'s Calendar</h1>
+		<h1 class="page_header">  <%= current_user.name.split(" ")[0] %>'s Calendar</h1>
 	<div class="simple_calendar cal-background">
 		<%= month_calendar(attribute: :start_date_time, events: @events) do |date, events| %>
 	  	<%= date.strftime("%e") %>
