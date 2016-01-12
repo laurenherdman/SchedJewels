@@ -4,9 +4,6 @@
 			<p id="user_name"> <% if current_user %>
   			<%= current_user.name %>
 		 <% end %> </p>
-			<div id="img_holder">
-				<img id="user_image" src="https://placehold.it/100x100">
-			</div>
 		</div>
 		<div class="sidebar_option">
 			<a href="/events" class="option_text" id="toption">My Calendar</a>
@@ -27,5 +24,14 @@
 	<div class="col-md-3 no-padding">
 	</div>
 
-	<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+	<div class="col-md-9 no-padding" id="proposal_holder">
+		<h1 class="page_header"><%= @list.name %></h1>
+
+<div>
+	<ul>
+		<% @list.items.each do |l| %>
+			<li class="list-item"><%= l.name %></li>
+		<% end %>
+	</ul>
+</div>
+	<%= render :partial => '/items/items' %>
