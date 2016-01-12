@@ -27,11 +27,12 @@
 	<div class="col-md-9 no-padding" id="proposal_holder">
 		<h1 class="page_header"> <%= @group.title %>: <%= @list.name %></h1>
 
-<div>
-	<ul>
+<div class="section-spacing">
+	<br>
+		<h3><%= @group.title %>: <%= @list.name %> Items</h3>
+
 		<% @list.items.each do |l| %>
-			<li class="list-item"><%= l.name %></li>
+			<p class="list-item"><%= l.name %></p>
 		<% end %>
-	</ul>
 </div>
 	<%= render :partial => '/items/items' %>

@@ -208,3 +208,40 @@ body {
 .comment-pad {
   margin-left: 10em;
 }
+
+// Lists
+
+// Place all the styles related to the lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.list-item {
+  display: flex;
+  width: 45%;
+  font-size: 1.2em;
+  margin-top: 2vh;
+  height: 2.2em;
+  float: left;
+  color: black;
+  vertical-align: middle;
+  padding-left: 2em;
+  padding-top: 0.35em;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  background-color: #3fc0c0;
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+  transition: .8s;
+
+  &:hover {
+    transition: .3s;
+    transform: scale(.98);
+  }
+}
+
+.list-text {
+  color: black;
+  text-align: center;
+}
