@@ -13,7 +13,7 @@ $(document).on('ready page:load', function() {
 		}
 
 		var function_Two = function() {
-		 	$('.start-hidden').delay(100).fadeIn();
+		 	$('.start-hidden').delay(500).fadeIn();
 		};
 
 		function_One().done( function_Two() );
@@ -26,9 +26,13 @@ $(document).on('ready page:load', function() {
 	} );
 
 	$('#add-attendee-js').click();
+	$('#add-attendee-js').click();
+	$('#add-attendee-js').click();
+
+	$('#add-time-js').click();
 	$('#add-time-js').click();
 
 	$('.all-proposals').hide().fadeIn(1000);
 	$('.form-block').hide().fadeIn(1000);
-
+	$('.prop-holder').hide().fadeIn(1000);
 });
