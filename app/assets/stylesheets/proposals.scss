@@ -398,10 +398,11 @@ body {
 
 .btn-xl {
 	background-image: image-url('background.png');
-    padding: 14px 35px;
-    font-size: 22px;
-    border-radius: 8px;
-    border: 0px solid transparent;
+  // padding: 14px 35px;
+  font-size: 22px;
+  border-radius: 3px;
+  vertical-align: middle;
+  border: 0px solid transparent;
 }
 
 

@@ -1,11 +1,13 @@
-<div>
+<div class="row submit_row center-block section-spacing">
   	<%= form_for @group do |f|%>
     <br>
 
-  	<div>
+  	<div class="row center-block text-center">
   		<%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, :class => 'comment-button' %>
   	</div>
+
+    <br>
 
 		<div class="row submit_row">
 			<%= f.submit 'Create Group', class: 'btn btn-xl center-block' %>

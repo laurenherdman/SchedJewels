@@ -1,8 +1,8 @@
-<div>
-	<h3>Create A List</h3>
+<div class="col-md-9 row submit_row center-block section-spacing">
+	<h3 class="text-center">Create A List</h3>
 
 	<%= form_for [@group, @list] do |f| %>
-		<div>
+		<div class="center-block text-center">
 			<%= f.label :name %>
 	    <%= f.text_field :name, :class => 'comment-button'  %>
 
