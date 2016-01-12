@@ -4,11 +4,11 @@
 	<%= form_for [@group, @list] do |f| %>
 		<div>
 			<%= f.label :name %>
-	    <%= f.text_field :name %>
+	    <%= f.text_field :name, :class => 'comment-button'  %>
 
 	    <%= f.hidden_field :group_id %>
 
-	    <%= f.submit "Create Your List" %>
+	    <%= f.submit "Create Your List", :class => 'comment-button'  %>
     </div>
 	<% end %>
 

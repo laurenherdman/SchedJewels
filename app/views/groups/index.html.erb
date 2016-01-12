@@ -31,15 +31,14 @@
 		<div class="spacer"></div>
 			<div class="row section-spacing">
 				<% @groups.each do |g| %>
-				<ul>
-				<li>
-				<%= link_to g.title, group_path(g) %></li>
-				</ul>
+				<p class="all-proposals proposal"><%= link_to g.title, group_path(g), class: "p_title" %></p>
 			<% end %>
+</div>
 
+<div class="col-md-9">
 			<h3>Create A New Group</h3>
-			<%= link_to "Create", new_group_path, method: :get, class: 'btn btn-xl center-block' %>
-
+			<%= link_to "Create", new_group_path, method: :get, class: 'btn btn-xl center-block comment-button' %>
+			</div>
 		</div>
 	</div>
 </div>
