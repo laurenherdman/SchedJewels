@@ -29,7 +29,8 @@
 
 <div class="section-spacing">
 	<br>
-		<h3><%= @group.title %>: <%= @list.name %> Items</h3>
+		<h4>Group: <%= @group.title %></h4>
+		<h4>List: <%= @list.name %> Items</h4>
 
 		<% @list.items.each do |l| %>
 			<p class="list-item"><%= l.name %></p>
