@@ -4,7 +4,7 @@
 		<%= form_for [@proposal, @comment]  do |f| %>
 
 		  <div class="center-block text-center">
-		    <p><%= f.text_area :body_text, class: 'form-control comment-box center-block', rows: 2 %></p>
+		    <p><%= f.text_area :body_text, class: 'form-control comment-box center-block', rows: 4 %></p>
 		    <%= f.submit "Comment", :class => 'comment-button' %>
 		  </div>
 
