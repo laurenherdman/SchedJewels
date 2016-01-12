@@ -92,7 +92,6 @@ class Event < ActiveRecord::Base
       :headers => {'Content-Type' => 'application/json'})
     googleeventid = JSON.load(@result.response.body)["id"]
     self.update_attribute("google_event_id", googleeventid)
-    binding.pry
   end
 
   def self.show_calendar(user)
