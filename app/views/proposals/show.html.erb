@@ -41,9 +41,10 @@
 								<p class="voted"> Voted </p>
 							<% else %>
 								<%= form_for [@proposal, t, Vote.new], remote: true do |f| %>
-									<%= f.submit "Vote", class: 'vote-form' %>
+									<%= f.submit "Vote", class: 'btn btn-default center-block vote-form' %>
+										<p class="voted start-hidden "> Voted </p>	
 								<% end %>
-								<p class="voted start-hidden"> Voted </p>
+
 							<% end %>
 					</div>
 				<% end %>
