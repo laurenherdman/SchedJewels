@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     @item = Item.create(item_params)
     @group = Group.find(params[:group_id])
     @item.list_id = @list.id
-    @item.group_id = @group.ide
+    @item.group_id = @group.id
 
     if @item.save
       redirect_to group_list_path(@group, @list)
