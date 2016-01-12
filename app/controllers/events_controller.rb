@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 
+
     def new
       @event = Event.new
     end
@@ -25,15 +26,26 @@ class EventsController < ApplicationController
 
     def index
       Event.show_calendar(current_user).each do |event|
-
+        start_event = nil
+        if event["start"]["dateTime"] == nil
+          start_event = DateTime.parse(event["start"]["date"])
+        else
+          start_event = DateTime.parse(event["start"]["dateTime"])
+        end
+        end_event = nil
+        if event["end"]["dateTime"] == nil
+          end_event = DateTime.parse(event["end"]["date"])
+        else
+          end_event = DateTime.parse(event["end"]["dateTime"])
+        end
         e = Event.create({
           user_id: current_user.id,
-          start_date_time: DateTime.parse(event["start"]["dateTime"]),
-          end_date_time: DateTime.parse(event["end"]["dateTime"]),
+          start_date_time: start_event,
+          end_date_time: end_event,
           location: event["location"],
           description: event["description"],
           title: event["summary"],
-          google_event_id: event["id"],
+          google_event_id: event["id"]
           })
 
       end
