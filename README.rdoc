@@ -32,7 +32,7 @@ Sched Jewels uses `Rails Version 4.2.5`
 - Go to https://console.developers.google.com/ and make a project
 - Enable and manage APIs
 - Go to credentials
-- Make new credentials wiht OAuth client ID
+- Make new credentials with OAuth client ID
 - In config/application.yml replace key and secret`
 
 `GOOGLE_KEY: "Client_ID"
