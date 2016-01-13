@@ -39,10 +39,9 @@ Sched Jewels uses `Rails Version 4.2.5`
 - Go to credentials
 - Make new credentials with OAuth client ID
 - In config/application.yml replace key and secret
+`GOOGLE_KEY: "Client_ID"`
 
-`GOOGLE_KEY: "Client_ID"
-
-GOOGLE_SECRET: "Client_Secret"`
+`GOOGLE_SECRET: "Client_Secret"`
 
 ## Creators
 
