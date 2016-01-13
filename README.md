@@ -41,6 +41,14 @@ Sched Jewels uses `Rails Version 4.2.5`
 - In config/application.yml replace key and secret
 
 `GOOGLE_KEY: "Client_ID"
+
 GOOGLE_SECRET: "Client_Secret"`
 
+## Creators
+
+Feel free to contact the creators of Sched Jewels with any inquiries you may have:
+
+[Stephanie Nguyen](http://www.stephthi.com/)
+[Lauren Herdman](http://www.laurenherdman.com/)
+[Colin Grenville](http://www.colingrenville.com/)
 
