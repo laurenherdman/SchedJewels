@@ -1,10 +1,10 @@
-# Sched Jewels
+= Sched Jewels
 
 "The Crystal Clear Way of Organization"
 
 (BETA Version)
 
-### About
+== About
 
 Sched Jewels is an organization app focused around the Google API and Google OAuth. This app helps reduce the amount of communication between groups on different platforms (ex: Facebook, iMessage, WhatsApp). Often times, Facebook events get ignored and not everyone has the same communication platforms for groups.
 
@@ -12,7 +12,7 @@ This app uses a gmail account. With a simple click and approval of Sched Jewels 
 
 Sched Jewels also allows users to create groups with friends, family members or a significant other. They can create lists and add items (ex: groceries, tasks). Users can also chat with each other.
 
-### Features
+== Features
 
 Some of the key features include:
 - Simple Google login
@@ -24,13 +24,13 @@ Some of the key features include:
 - Chat in groups
 - Responsive design
 
-### Getting Started
+== Getting Started
 
 Sched Jewels uses `Rails Version 4.2.5`
 
-##### Steps:
+===== Steps:
 
-`$ bundle install`
+```$ bundle install```
 
 `$ bundle install exec figaro install
 
@@ -38,9 +38,9 @@ Sched Jewels uses `Rails Version 4.2.5`
 - Enable and manage APIs
 - Go to credentials
 - Make new credentials with OAuth client ID
-- In config/application.yml replace key and secret`
+- In config/application.yml replace key and secret
 
-`GOOGLE_KEY: "Client_ID"
-GOOGLE_SECRET: "Client_Secret"`
+```GOOGLE_KEY: "Client_ID"
+GOOGLE_SECRET: "Client_Secret"```
 
 
