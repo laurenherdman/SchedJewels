@@ -49,6 +49,8 @@ GOOGLE_SECRET: "Client_Secret"`
 Feel free to contact the creators of Sched Jewels with any inquiries you may have:
 
 [Stephanie Nguyen](http://www.stephthi.com/)
+
 [Lauren Herdman](http://www.laurenherdman.com/)
+
 [Colin Grenville](http://www.colingrenville.com/)
 
